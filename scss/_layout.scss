@@ -1,0 +1,115 @@
+/* /////////////////////////////////
+	Layout Helpers
+///////////////////////////////// */
+
+// for elements with content replaced by background image apply this class and then the element only needs height, width, and background image
+
+.ir,
+%ir { 
+	display: block;
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	text-indent: -1000em;
+}
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+// use .clearfix to clear containers with floats inside
+
+.clearfix:after,
+%clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix,
+%clearfix {
+	zoom: 1; /* for IE */
+}
+
+/* /////////////////////////////////
+	Responsive Helpers
+///////////////////////////////// */
+
+.narrow-down-only {
+  display: none;
+  
+  @include for-narrow-down {
+    display: block;
+  }
+}
+
+.mob-only {
+  display: none;
+  
+  @include for-mob-only {
+    display: block;
+  }
+}
+
+.mob-hide {
+  
+  @include for-mob-only {
+    display: none;
+  }
+}
+
+/* /////////////////////////////////
+	Large sections & containers
+	(See also _nav)
+///////////////////////////////// */
+
+html {
+  background: $bg;
+}
+
+body {
+  position: relative;
+  min-width: 320px;  
+	background: $bg;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+	// when mobile menu is open, stop scrolling on body
+	
+	@include for-narrow-down {
+	
+  	&.menu-is-open {
+  	  max-height: 100vh;
+  	  overflow-y: hidden;
+  	}
+  }
+}
+
+// content area
+
+.content {
+  padding: $vert-lg $pad-lg ($vert-lg / 2);
+  // make room for left nav
+  margin-left: 280px;
+  
+  @include for-narrow-down {
+    margin-left: 0;
+    padding: ($vert-md - 10px) $pad-md (($vert-md / 2) - 10px);
+    // make room for top header
+    margin-top: 56px;
+  }
+  
+  @include for-mob-only {
+    padding: $vert-sm $pad-sm 0;
+    margin-top: 44px;
+  }
+}
+
+.center {
+  max-width: 1280px;
+  margin: 0 auto;
+}

@@ -1,0 +1,85 @@
+/* /////////////////////////////////
+	Mixins
+///////////////////////////////// */
+
+// Mixins are not used for vendor prefixes. Autoprefixer handles that!
+
+// font-face
+
+@mixin font-face($font-family, $file, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: quote($font-family);
+		src: url('../font/#{$file}.eot');
+		src: url('../font/#{$file}.eot?#iefix') format('embedded-opentype'),
+			 url('../font/#{$file}.woff2') format('woff2'),
+		     url('../font/#{$file}.woff') format('woff'),
+		     url('../font/#{$file}.ttf') format('truetype'),
+		     url('../font/#{$file}.svg##{$font-family}') format('svg');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}  
+
+// @2x background images
+
+@mixin bg-2x($bgcolor, $image, $repeat, $pos, $width: 50%, $height: auto, $filetype: png) {
+
+	background: $bgcolor url('#{$image}.#{$filetype}') $repeat $pos;
+	@media (min--moz-device-pixel-ratio: 1.3),
+	(-o-min-device-pixel-ratio: 2.6/2),
+	(-webkit-min-device-pixel-ratio: 1.3),
+	(min-device-pixel-ratio: 1.3),
+	(min-resolution: 1.3dppx) {
+	
+	// on retina, use image that’s scaled by 2
+	background-image: url('#{$image}@2x.#{$filetype}');
+	background-size: $width $height;
+	
+	}
+}
+
+// responsive media queries
+
+@mixin for-mob-only {
+  @media (max-width: #{$bp-sm - 1px}) { @content; }
+}
+
+@mixin for-mob-land-only {
+  @media (max-width: #{$bp-sm - 1px}) and (orientation : landscape) { @content; }
+}
+
+@mixin for-tab-down {
+  @media (max-width: #{$bp-md - 1px}) { @content; }
+}
+
+@mixin for-tab-only {
+  @media (min-width: $bp-sm) and (max-width: #{$bp-md - 1px}) { @content; }
+}
+
+@mixin for-tab-land-only {
+  @media (min-width: $bp-sm) and (max-width: #{$bp-md - 1px}) and (orientation : landscape) { @content; }
+}
+
+@mixin for-narrow-up {
+  @media (min-width: $bp-md) { @content; }
+}
+
+@mixin for-narrow-down {
+  @media (max-width: #{$bp-lg - 1px}) { @content; }
+}
+
+@mixin for-narrow-only {
+  @media (min-width: $bp-md) and (max-width: #{$bp-lg - 1px}) { @content; }
+}
+
+@mixin for-desk-up {
+  @media (min-width: $bp-lg) { @content; }
+}
+
+@mixin for-desk-only {
+  @media (min-width: $bp-lg) and (max-width: #{$bp-xl - 1px}) { @content; }
+}
+
+@mixin for-wide-only {
+  @media (min-width: $bp-xl) { @content; }
+}

@@ -1,0 +1,134 @@
+/* /////////////////////////////////
+	Variables
+///////////////////////////////// */
+
+// text sizes
+
+$fs-xs: 11px;
+$fs-sm: 12px;
+$fs-md: 14px;
+$fs-lg: 16px;
+
+$fs-heading-sm: 18px;
+$fs-heading: 24px;
+
+$fs-title: 36px;
+$fs-title-lg: 48px;
+
+// line height
+
+$lh-xs: 13px;
+$lh-sm: 18px;
+$lh-md: 22px;
+$lh-lg: 28px;
+
+$lh-heading-sm: 24px;
+$lh-heading: 30px;
+
+$lh-title: 42px;
+$lh-title-lg: 56px;
+
+// font stack
+
+$f-sans: "Roboto", sans-serif;
+$f-slab: "Merriweather", serif;
+
+// text colors
+
+$c: #333;
+$c-md: #777;
+$c-inv: #fff;
+
+$c-inv-lt: rgba(#fff,.5);
+$c-inv-lt-hov: rgba(#fff,.75);
+$c-inv-lt-act: rgba(#fff,1);
+
+$c-link: #333;
+$c-hov: #191919;
+$c-act: #000;
+
+$c-lt: rgba(#000,.16);
+$c-lt-hov: rgba(#000,.24);
+$c-lt-act: rgba(#000,.32);
+
+$c-alert: #ea6720;
+$c-alert-hov: #d7550f;
+$c-alert-act: #c24a0a;
+
+$c-brand: #abcc75;
+$c-brand-hov: #96b85c;
+$c-brand-act: #86ab4a;
+
+$c-grade-high: #4d9d2e;
+$c-grade-mid: #e0b50a;
+$c-grade-low: #ea6720;
+
+// background colors
+
+$bg: #f8f7f6;
+$bg-md: rgba(#f8f7f6,.8);
+$bg-lt: rgba(#f8f7f6,.5);
+$bg-white: #fff;
+
+$bg-high: rgba(#4d9d2e,.08);
+$bg-mid: rgba(#e0b50a,.06);
+$bg-low: rgba(#ea6720,.05);
+
+// scale colors
+
+$temp-low2: #356bb5;
+$temp-low1: #2d8d73;
+$temp: #4d9d2e;
+$temp-high1: #e0b50a;
+$temp-high2: #e38e14;
+
+$hum: #4d9d2e;
+$hum-high1: #30a076;
+$hum-high2: #13a3bd;
+
+$dew: #4d9d2e;
+$dew-high1: #30a076;
+$dew-high2: #13a3bd;
+
+// borders
+
+$b: solid 1px rgba(#000,.06);
+$b-input: solid 1px rgba(#000,.08);
+$b-focus: solid 1px rgba(#000,.16);
+$b-over: solid 1px rgba(#000,.04);
+$b-solid: solid 1px $c;
+
+$b-alert: solid 2px $c-alert;
+
+// shadow
+
+$sh-over: 0 12px 24px rgba(#000,.12);
+
+// padding
+
+$pad-lg: 60px;
+$pad-md: 36px;
+$pad-sm: 16px;
+$pad-sm-txt: 24px;
+
+$pad-card-lg: 30px;
+$pad-card-sm: 26px;
+
+$vert-lg: 60px;
+$vert-md: 48px;
+$vert-sm: 16px;
+
+// z-index
+
+$z-base: 0;
+$z-header: 100;
+$z-overlay: 1000;
+
+// breakpoints
+
+$bp-xl: 1600px;
+$bp-lg-grid: 1366px;
+$bp-lg: 1200px;
+$bp-md-grid: 1024px;
+$bp-md: 900px;
+$bp-sm: 700px;

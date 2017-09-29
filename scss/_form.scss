@@ -1,0 +1,532 @@
+/* /////////////////////////////////
+	Forms
+///////////////////////////////// */
+
+form {}
+
+fieldset {}
+
+.form-row {
+  // see _lists
+}
+
+input[type=text],
+input[type=password],
+input[type=search],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=number],
+textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 8px 18px;
+	font: 400 #{$fs-lg}/#{$lh-lg} $f-sans;
+	color: $c;
+	background: $bg-lt;
+	border: $b-input;
+	transition: all ease .2s;
+	-webkit-appearance: none;
+	border-radius: 3px;
+	
+	&:focus {
+    border: $b-focus;
+	}
+	
+	&:disabled {
+	  background: $bg-white;
+	  color: $c-md;
+	}
+	
+	.error & {
+	  border-color: $c-alert;
+	}
+	
+	// single input restricted to half width
+    
+  .max-half & {
+    width: calc(50% - 9px);
+    
+    @include for-mob-only {
+      width: 100%;
+    }
+  }
+}
+
+textarea {
+  height: 100px;
+}
+
+select {
+  // these defults will be overriden by selectBoxIt
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 8px 18px;
+	font: 400 #{$fs-lg}/#{$lh-lg} $f-sans;
+	color: $c;
+	background: $bg-lt;
+	border: $b-input;
+	
+	&:disabled {
+	  background: $bg-white;
+	  color: $c-md;
+	}
+	
+	.error & {
+	  border-color: $c-alert;
+	}
+	
+	// single select restricted to half width
+    
+  .max-half & {
+    width: calc(50% - 9px);
+  }
+}
+
+/* /////////////////////////////////
+	iCheck - checkbox and radio button
+///////////////////////////////// */
+
+// defauilt + prevent flash unstyled
+input[type=checkbox],
+input[type=radio] {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  opacity: 0;
+}
+
+.icheckbox,
+.iradio {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 12px 0 0;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  background: $bg-lt;
+  border: $b-input;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color ease .2s, border-color ease .2s;
+  // adjust up one pixel
+  position: relative;
+  top: -1px;
+}
+
+.icheckbox {
+  background: $bg-lt url('/img/icon/input-checkbox.svg') no-repeat 6px (8px - 28px - 28px);
+    
+  &.hover {
+    border: $b-focus;
+    background-position: 6px (8px - 28px);
+  }
+  
+  &.checked {
+    background-color: $c-brand;
+    background-position: 6px 8px;
+    border-color: #95B463;
+  }
+  
+  &.disabled {
+    background-color: $bg-white;
+  }
+  
+  &.checked.disabled {
+    background-color: $c-lt;
+    background-position: 6px 8px;
+    border: $b;
+  }
+}
+
+.iradio {
+  background: $bg-lt url('/img/icon/input-radio.svg') no-repeat 9px (9px - 28px - 28px);
+    
+  &.hover {
+    border: $b-focus;
+    background-position: 9px (9px - 28px);
+  }
+  
+  &.checked {
+    background-color: $c-brand;
+    background-position: 9px 9px;
+    border-color: #95B463;
+  }
+  
+  &.disabled {
+    background-color: $bg-white;
+  }
+  
+  &.checked.disabled {
+    background-color: $c-lt;
+    background-position: 9px 9px;
+    border: $b;
+  }
+}
+
+/* /////////////////////////////////
+	Select Box Replace
+///////////////////////////////// */
+
+/*
+ * jquery.selectBoxIt.css 3.8.1
+ * Author: @gregfranko
+ * Customised: Benek Lisefski
+ */
+
+/*
+  Setup
+*/
+
+/* SelectBoxIt container */
+.selectboxit-container {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  vertical-align: top;
+}
+
+/* Styles that apply to all SelectBoxIt elements */
+.selectboxit-container * {
+
+  /* Prevents text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+/* Button */
+.selectboxit-container .selectboxit {
+  box-sizing: border-box;
+  width: auto !important; /* Width of the dropdown button */
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+/* Focus pseudo selector */
+.selectboxit-container .selectboxit:focus {
+  outline: 0;
+}
+
+/* The first Drop Down option */
+.selectboxit-option-first {
+
+}
+
+/* The first Drop Down option optgroup */
+.selectboxit-optgroup-header + .selectboxit-option-first {}
+
+/* The last Drop Down option */
+.selectboxit-option-last {}
+
+.selectboxit-container .selectboxit-option-icon {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.selectboxit-rendering {
+  display: inline-block !important;
+  *display: inline !important;
+  zoom: 1 !important;
+  visibility: visible !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+/* jQueryUI and jQuery Mobile compatability fix - Feel free to remove this style if you are not using jQuery Mobile */
+.jqueryui .ui-icon {
+  background-color: inherit;
+}
+
+/* Another jQueryUI and jQuery Mobile compatability fix - Feel free to remove this style if you are not using jQuery Mobile */
+.jqueryui .ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+/* /////////////////////////////////
+	Default Whare Hauora Theme
+///////////////////////////////// */
+
+/* Button */
+.selectboxit-btn {
+  font: 400 #{$fs-lg}/#{$lh-lg} $f-sans;
+	color: $c;
+	background: $bg-lt;
+	border: $b-input;
+	transition: all ease .2s;
+	-webkit-appearance: none;
+	border-radius: 3px;
+}
+
+/* Height and Vertical Alignment of Text */
+.selectboxit-container span, .selectboxit-container .selectboxit-options a {
+  height: 44px; /* Height of the drop down */
+  line-height: 44px; /* Vertically positions the drop down text */
+  display: block;
+}
+
+/* Button Text */
+.selectboxit-text {
+  box-sizing: border-box;
+  max-width: 100% !important;
+  padding: 0 40px 0 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+}
+
+.selectboxit-btn.selectboxit-enabled:hover,
+.selectboxit-btn.selectboxit-enabled:focus,
+.selectboxit-btn.selectboxit-enabled:active {
+  border: $b-focus;
+}
+
+/* Drop Down down arrow container */
+.selectboxit-arrow-container {
+  /* Positions the down arrow */
+  width: 44px;
+  position: absolute;
+  top: -2px;
+  right: 0;
+}
+
+/* Drop Down down arrow */
+.selectboxit .selectboxit-arrow-container .selectboxit-arrow {
+  /* Horizontally centers the down arrow */
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+}
+
+// the arrow
+.selectboxit-default-arrow {
+  width: 0;
+  height: 0;
+  border-top: 5px solid $c;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+/* Options List */
+.selectboxit-container .selectboxit-options {
+  box-sizing: border-box;
+  min-width: 100% !important;
+  width: 100% !important;
+  max-height: 240px;
+  margin: -2px 0;
+  padding: 12px 2px 12px !important;
+  list-style: none;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  cursor: pointer;
+  display: none;
+  z-index: 9999999999999;
+  text-align: left;
+  background-color: $bg-white;
+  border: $b-over;
+  box-shadow: $sh-over;
+  border-radius: 5px;
+  background-clip: padding-box;
+  overflow: scroll;
+}
+
+// list LI
+.selectboxit-option {
+  // override LI defaults
+  list-type: none;
+  padding: 0;
+  margin: 0 0 2px 0 !important;
+  background: none;
+  
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Individual options */
+.selectboxit-list .selectboxit-option-anchor {
+  display: block;
+  height: auto !important;
+  padding: 11px 16px 10px 16px !important;
+  font-size: $fs-md;
+	line-height: 18px !important;
+	color: $c-md;
+	white-space: normal !important;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all ease .2s;
+	
+	.no-touch &:hover {
+	  background: $bg-lt;
+	  color: $c;
+	}
+}
+
+/* Optgroup Header */
+.selectboxit-optgroup-header {
+  height: auto !important;
+  padding: 16px 16px 12px 12px;
+  font: 700 #{$fs-xs}/#{$lh-xs} $f-sans !important;
+  color: $c;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  
+  .no-touch &:hover {
+	  cursor: default;
+	}
+}
+
+// icons in button
+.selectboxit-btn .selectboxit-option-icon-container {
+  float: left;
+  height: 44px !important;
+  line-height: 44px !important;
+}
+
+// icons in list
+.selectboxit-list .selectboxit-option-icon-container {
+  float: left;
+  height: 20px !important;
+  line-height: 18px !important;
+  position: relative;
+  top: -1px;
+}
+
+// the icon
+.selectboxit-option-icon-url {
+  width: 20px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: left center;
+  float: left;
+  margin: 0 -8px 0 19px !important;
+}
+
+// the icon in option list
+.selectboxit-list .selectboxit-option-icon-url {
+  margin-left: 0 !important;
+  margin-right: 8px !important;
+}
+
+// Disabled
+.selectboxit.selectboxit-disabled {
+  background: $bg-white;
+  color: $c-md;
+  cursor: default;
+  
+  .selectboxit-default-arrow {
+    border-top-color: $c-md;
+  }
+}
+
+.selectboxit-list > .selectboxit-disabled > .selectboxit-option-anchor {
+  color: $c-lt;
+}
+
+.selectboxit-selected > .selectboxit-option-anchor {
+  background: $bg;
+  color: $c;
+  
+  .no-touch &:hover {
+	  background: $bg;
+	}
+}
+
+// error
+
+.error .selectboxit-btn {
+  border-color: $c-alert;
+}
+
+.error .selectboxit-btn.selectboxit-enabled:hover,
+.error .selectboxit-btn.selectboxit-enabled:focus,
+.error .selectboxit-btn.selectboxit-enabled:active {
+  border-color: $c-alert-hov;
+}
+
+/* /////////////////////////////////
+	Select box varients 
+///////////////////////////////// */
+
+// lang picker
+
+.selectboxit-btn.lang-picker {
+  background: transparent;
+  border: 0;
+}
+
+.selectboxit-btn.selectboxit-enabled.lang-picker:hover,
+.selectboxit-btn.selectboxit-enabled.lang-picker:focus,
+.selectboxit-btn.selectboxit-enabled.lang-picker:active {
+  border: 0;
+}
+
+.selectboxit-btn.lang-picker .selectboxit-text {
+  float: left;
+  padding-right: 11px;
+  font-size: $fs-md;
+  color: $c-md;
+}
+
+.selectboxit-btn.lang-picker .selectboxit-arrow-container {
+  width: 5px;
+  position: relative;
+  float: left;
+}
+
+.selectboxit-btn.lang-picker .selectboxit-default-arrow {
+  border-top-color: $c-md;
+}
+
+// whare picker
+
+.selectboxit-btn.whare-picker {
+  background: transparent;
+  border: 0;
+}
+
+.selectboxit-btn.selectboxit-enabled.whare-picker:hover,
+.selectboxit-btn.selectboxit-enabled.whare-picker:focus,
+.selectboxit-btn.selectboxit-enabled.whare-picker:active {
+  border: 0;
+}
+
+.selectboxit-btn.whare-picker .selectboxit-text {
+  float: left;
+  padding-left: 24px;
+  padding-right: 9px;
+  font-weight: 700;
+  max-width: calc(100% - 36px) !important;
+}
+
+.selectboxit-btn.whare-picker .selectboxit-arrow-container {
+  width: 5px;
+  position: relative;
+  float: left;
+}
+
+.menu > header .selectboxit-list .selectboxit-option-anchor {
+  padding: 11px 22px 10px 22px !important;
+}

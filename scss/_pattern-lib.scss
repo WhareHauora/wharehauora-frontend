@@ -1,0 +1,80 @@
+/* /////////////////////////////////
+	Pattern Library
+///////////////////////////////// */
+
+h1.inline {
+  margin-top: $vert-md;
+  
+  @include for-narrow-down {
+    margin-top: $vert-md - 10px;
+  }
+  
+  @include for-mob-only {
+    margin-top: $vert-sm;
+  }
+}
+
+.note {
+  margin: 0 0 30px 0;
+  padding: 0 $pad-card-lg 24px;
+  background: rgba($bg-white,.5);
+  border: $b;
+  border-radius: 5px;
+  
+  h3 {
+    margin: 24px 0;
+  }
+  
+  @include for-mob-only {
+    margin-bottom: $vert-sm;
+    padding: 20px ($pad-card-sm - 4px);
+  }
+}
+
+.card .note {
+  margin: 30px 0 0 0;
+  background: $bg-lt;
+  
+  @include for-mob-only {
+    margin: 20px -12px 0;
+  }
+}
+
+code {
+  display: inline-block;
+  padding: 0 6px;
+  background: $bg-white;
+  border: $b;
+  border-radius: 3px;
+}
+
+xmp {
+  padding: 6px 12px;
+  background: $bg-white;
+  border: $b;
+  border-radius: 3px;
+  font-size: $fs-md;
+  line-height: $lh-md;
+  white-space: pre-wrap;
+}
+
+div.demo {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 24px !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+  }
+  
+  h1.lg {
+    text-align: left;
+  }
+}
+
+.readings.demo .reading {
+  margin-right: 20px;
+}

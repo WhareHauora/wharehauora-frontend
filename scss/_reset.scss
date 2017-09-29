@@ -1,0 +1,66 @@
+/* /////////////////////////////////
+	Resets & Fixes
+///////////////////////////////// */
+
+// reset whitespace
+* { margin:0; padding:0; }
+
+// standardize HTML5 elements 
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display:block; }
+
+// Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+// remove sub-pixel anti-aliasing
+body { font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -o-font-smoothing: antialiased; }
+
+// normalise bold weight
+b, strong { font-weight: bold; }
+
+// remove default bold from headings
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+// remove link focus outline
+a:active, a:hover, a:focus { outline: 0; }
+
+// Prevents `sub` and `sup` affecting `line-height` in all browsers 
+sub, sup {  font-size: 75%;  line-height: 0;  position: relative;  vertical-align: baseline; }
+sup {  top: -0.5em; }
+sub { bottom: -0.25em; }
+
+//  1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3
+//  2. Improves image quality when scaled in IE 7
+img, a img { border: 0; -ms-interpolation-mode: bicubic; }
+
+// Remove most spacing between table cells 
+table { border-collapse: collapse; border-spacing: 0; }
+
+// Remove default fieldset styles 
+fieldset {  border: 0;  margin: 0;  padding: 0; }
+
+// Stop resizing of text areas
+textarea { resize: none; }
+  
+// Remove textarea scrollbars from IE 
+textarea { overflow: hidden; }
+
+// Remove input focus glow
+input:focus, select:focus, textarea:focus { outline: 0; }
+
+// Remove webkit's search field style override
+input[type=search] { -webkit-appearance: textfield; }
+::-webkit-search-cancel-button { display: none; }
+
+// IE9 gradient fix
+.gradient { filter: none; }
+
+// stop iOS landscape font size increase
+body {
+  -webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+// block SVGs
+svg {
+  display: block;
+}

@@ -1,0 +1,402 @@
+/* /////////////////////////////////
+	Default Reading Structure
+///////////////////////////////// */
+
+// readings container
+
+.readings {
+  @extend %clearfix;
+  box-sizing: border-box;
+  margin: 30px 0 0;
+}
+
+// reading
+
+.reading {
+  float: left;
+  
+  .vis {
+    position: relative;
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    transition: background-color ease .3s;
+    // default color
+    background: $temp;
+  }
+  
+  .value {
+    font-size: $fs-title;
+    line-height: $lh-title;
+    font-weight: bold;
+    letter-spacing: -.05em;
+    transition: color ease .3s;
+    // adjst alignment
+    margin-left: -1px;
+    // default color
+    color: $temp;
+    
+    @include for-mob-only {
+      font-size: $fs-title - 4px;
+      line-height: $lh-title - 4px;
+    }
+  }
+  
+  .label {
+    display: block;
+    margin: 8px 0 0;
+    font: 700 #{$fs-xs}/#{$lh-xs} $f-sans;
+    color: $c;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    transition: color ease .3s;
+    
+    @include for-mob-only {
+      margin-top: 4px;
+    }
+  }
+  
+  .time {
+    display: block;
+    margin-top: 2px;
+    font-size: $fs-sm;
+    line-height: $lh-sm;
+    color: $c-md;
+  }
+}
+
+/* /////////////////////////////////
+	Temperature Scale
+///////////////////////////////// */
+
+.reading.temp-high-2b {
+
+  .vis {
+    background: $temp-high2 url('/img/scale/temp-high-2b.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp-high2;
+  }
+}
+
+.reading.temp-high-2a {
+
+  .vis {
+    background: $temp-high2 url('/img/scale/temp-high-2a.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp-high2;
+  }
+}
+
+.reading.temp-high-1b {
+
+  .vis {
+    background: $temp-high1 url('/img/scale/temp-high-1b.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp-high1;
+  }
+}
+
+.reading.temp-high-1a {
+
+  .vis {
+    background: $temp-high1 url('/img/scale/temp-high-1a.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp-high1;
+  }
+}
+
+.reading.temp-mid-b {
+
+  .vis {
+    background: $temp url('/img/scale/temp-mid-b.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp;
+  }
+}
+
+.reading.temp-mid-a {
+
+  .vis {
+    background: $temp url('/img/scale/temp-mid-a.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp;
+  }
+}
+
+.reading.temp-low-1a {
+
+  .vis {
+    background: $temp-low1 url('/img/scale/temp-low-1a.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp-low1;
+  }
+}
+
+.reading.temp-low-1b {
+
+  .vis {
+    background: $temp-low1 url('/img/scale/temp-low-1b.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp-low1;
+  }
+}
+
+.reading.temp-low-2a {
+
+  .vis {
+    background: $temp-low2 url('/img/scale/temp-low-2a.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp-low2;
+  }
+}
+
+.reading.temp-low-2b {
+
+  .vis {
+    background: $temp-low2 url('/img/scale/temp-low-2b.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $temp-low2;
+  }
+}
+
+/* /////////////////////////////////
+	Humidity Scale
+///////////////////////////////// */
+
+.reading.hum-high-2b {
+
+  .vis {
+    background: $hum-high2 url('/img/scale/hum-high-2b.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $hum-high2;
+  }
+}
+
+.reading.hum-high-2a {
+
+  .vis {
+    background: $hum-high2 url('/img/scale/hum-high-2a.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $hum-high2;
+  }
+}
+
+.reading.hum-high-1b {
+
+  .vis {
+    background: $hum-high1 url('/img/scale/hum-high-1b.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $hum-high1;
+  }
+}
+
+.reading.hum-high-1a {
+
+  .vis {
+    background: $hum-high1 url('/img/scale/hum-high-1a.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $hum-high1;
+  }
+}
+
+.reading.hum-mid-b {
+
+  .vis {
+    background: $hum url('/img/scale/hum-mid-b.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $hum;
+  }
+}
+
+.reading.hum-mid-a {
+
+  .vis {
+    background: $hum url('/img/scale/hum-mid-a.svg') no-repeat center center;
+  }
+  
+  .value {
+    color: $hum;
+  }
+}
+
+/* /////////////////////////////////
+	Dewpoint Scale
+///////////////////////////////// */
+
+.reading.dew-high-2 {
+
+  .vis {
+    background: $dew-high2 url('/img/scale/dew-high-2.svg') no-repeat center calc(50% - 1px);
+  }
+  
+  .value {
+    color: $dew-high2;
+  }
+}
+
+.reading.dew-high-1 {
+
+  .vis {
+    background: $dew-high1 url('/img/scale/dew-high-1.svg') no-repeat center calc(50% - 1px);
+  }
+  
+  .value {
+    color: $dew-high1;
+  }
+}
+
+.reading.dew-mid {
+
+  .vis {
+    background: $dew url('/img/scale/dew-mid.svg') no-repeat center calc(50% - 1px);
+  }
+  
+  .value {
+    color: $dew;
+  }
+}
+
+/* /////////////////////////////////
+	Expired
+///////////////////////////////// */
+
+.reading.expired,
+.expired .reading {
+  
+  .vis {
+    background-color: $c-lt !important;
+  }
+  
+  .value {
+    color: $c-lt !important;
+  }
+  
+  .label {
+    color: $c-md;
+  }
+}
+
+/* /////////////////////////////////
+	Loading
+///////////////////////////////// */
+
+.loader {
+  background: $c-inv;
+  // hide until needed;
+  display: none
+}
+
+.reading.loading,
+.loading .reading {
+  
+  .vis {
+    background-color: $c-lt !important;
+    background-image: none !important;
+    
+    .loader {
+      display: block;
+    }
+  }
+  
+  .value {
+    color: $c-lt !important;
+  }
+}
+
+/* /////////////////////////////////
+	Room Rating
+///////////////////////////////// */
+
+.rating {
+  @extend %clearfix;
+  box-sizing: border-box;
+  padding-top: 20px;
+
+  .grade {
+    display: block;
+    font-size: 80px;
+    line-height: 94px;
+    font-weight: 700;
+    white-spacing: nowrap;
+    // adjst alignment
+    margin-left: -2px;
+    // default color
+    color: $temp;
+  }
+  
+  .value {
+    display: block;
+    font-size: $fs-title;
+    line-height: $lh-title;
+    font-weight: 300;
+    letter-spacing: -.02em;
+    transition: color ease .3s;
+    // adjst alignment
+    margin-left: -2px;
+    // default color
+    color: $temp;
+  }
+  
+  .label {
+    display: block;
+    margin: 8px 0 0;
+    font: 700 #{$fs-xs}/#{$lh-xs} $f-sans;
+    color: $c;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    transition: color ease .3s;
+  }
+  
+  @include for-mob-only {
+    padding-top: 12px;
+    padding-left: 72px;
+  
+    .grade {
+      float: left;
+      margin-left: -72px;
+    }
+    
+    .value {
+      width: auto;
+      margin-top: 16px;
+      font-size: $fs-title - 4px;
+      line-height: $lh-title - 4px;
+    }
+    
+    .label {
+      margin-top: 4px;
+    }
+  }
+}

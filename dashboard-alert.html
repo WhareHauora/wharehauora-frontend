@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Dashboard - with sensor alert</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+  <meta http-equiv="cleartype" content="on">
+  <!-- webfont -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- js -->
+	<script src="/js/modernizr-2.8.3.js"></script>
+	<script src="/js/detectizr-2.1.0.min.js"></script>
+	<!-- mobile & iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<link rel="apple-touch-icon-precomposed" href="/app-icon.png"/>
+</head>
+<body>
+  <header class="header">
+    <a class="logo-sm" href="/">Whare Hauora</a>
+    <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
+  </header><!-- end header -->
+  <div class="overlay"></div>
+  <nav class="menu">
+    <header>
+      <a class="logo" href="/">Whare Hauora</a>
+      <h6>Menu</h6>
+      <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+    </header>
+    <div class="nav">
+      <ul class="nav-links">
+        <li><a class="current" href="/dashboard.html">Dashboard</a></li>
+      </ul>
+      <h6>Rooms</h6>
+      <ul class="nav-links">
+        <li><a href="/room-detail1.html">Living Room</a></li>
+        <li><a href="/room-detail2.html">Master Bedroom</a></li>
+        <li><a href="/room-detail3.html">Kid's Room</a></li>
+      </ul>
+      <h6>Setup</h6>
+      <ul class="nav-links">
+        <li><a href="/rooms.html">Whare & Rooms</a></li>
+        <li><a href="/whanau.html">Whānau</a></li>
+      </ul>
+      <h6>Account</h6>
+      <ul class="nav-links">
+        <li><a href="/account.html">My Account</a></li>
+        <li><a href="/help.html">Whānau</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+    <footer>
+      <select class="lang-picker">
+        <option value="English" data-iconurl="/img/icon/lang-eng.svg" selected>English</option>
+        <option value="Te Reo Māori" data-iconurl="/img/icon/lang-mri.svg">Te Reo Māori</option>
+        <option value="Samoan" data-iconurl="/img/icon/lang-smo.svg">Samoan</option>
+      </select>
+    </footer>
+  </nav><!-- end menu -->
+  <div class="content">
+    <div class="center">
+      <h1>Lisefski House</h1>
+      <section class="card alert">
+        <header>
+          <h2 class="secondary">New sensors found</h2>
+          <a class="head-action" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+        </header>
+        <ul class="sensor-alerts">
+          <li><span class="sensor">253</span><span class="time">First detected about 1 month ago</span><a class="btn small" href="#">Assign to room</a></li>
+          <li><span class="sensor">45</span><span class="time">First detected 15 days ago</span><a class="btn small" href="#">Assign to room</a></li>
+        </ul>
+        <footer>
+          <p><a class="underline" href="#">Dismiss alert</a> and don't show again.</p>
+        </footer>
+      </section>
+      <div class="summary-grid">
+        <section class="card summary">
+          <header>
+            <h2>Living Room</h2>
+            <h4>Living Space</h4>
+            <a class="head-action" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
+          </header>
+          <div class="readings">
+            <div class="reading temp-low-1a">
+              <span class="vis"><span class="loader"></span></span>
+              <span class="value">17.3°C</span>
+              <span class="label">Temperature</span>
+              <span class="time">5 minutes ago</span>
+            </div>
+            <div class="reading hum-mid-a">
+              <span class="vis"><span class="loader"></span></span>
+              <span class="value">31.6%</span>
+              <span class="label">Humidity</span>
+              <span class="time">5 minutes ago</span>
+            </div>
+          </div>
+          <footer class="grade-high">
+            <p>Slightly too cool, but otherwise healthy.</p>
+            <a class="btn" href="room-detail1.html"><img class="svg" src="/img/icon/btn-analyse.svg" alt="icon" />Analyse</a>
+          </footer>
+        </section>
+        <section class="card summary">
+          <header>
+            <h2>Master Bedroom</h2>
+            <h4>Sleeping / Bedroom</h4>
+            <a class="head-action" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
+          </header>
+          <div class="readings">
+            <div class="reading temp-high-2a">
+              <span class="vis"><span class="loader"></span></span>
+              <span class="value">27.0°C</span>
+              <span class="label">Temperature</span>
+              <span class="time">5 minutes ago</span>
+            </div>
+            <div class="reading hum-high-2a">
+              <span class="vis"><span class="loader"></span></span>
+              <span class="value">80.6%</span>
+              <span class="label">Humidity</span>
+              <span class="time">5 minutes ago</span>
+            </div>
+          </div>
+          <footer class="grade-mid">
+            <p>Too hot and humid for sleeping. 
+              <br /><a class="underline" href="#">Learn how to fix this</a>.</p>
+            <a class="btn" href="room-detail2.html"><img class="svg" src="/img/icon/btn-analyse.svg" alt="icon" />Analyse</a>
+          </footer>
+        </section>
+        <section class="card summary">
+          <header>
+            <h2>Kid&rsquo;s Room</h2>
+            <h4>Sleeping / Bedroom</h4>
+            <a class="head-action" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
+          </header>
+          <div class="readings">
+            <div class="reading temp-low-2a">
+              <span class="vis"><span class="loader"></span></span>
+              <span class="value">15.9°C</span>
+              <span class="label">Temperature</span>
+              <span class="time">5 minutes ago</span>
+            </div>
+            <div class="reading hum-mid-a">
+              <span class="vis"><span class="loader"></span></span>
+              <span class="value">34.5%</span>
+              <span class="label">Humidity</span>
+              <span class="time">5 minutes ago</span>
+            </div>
+          </div>
+          <footer class="grade-low">
+            <p>Too cold for children to be sleeping. 
+              <br /><a class="underline" href="#">Learn how to fix this</a>.</p>
+            <a class="btn" href="room-detail3.html"><img class="svg" src="/img/icon/btn-analyse.svg" alt="icon" />Analyse</a>
+          </footer>
+        </section>
+      </div>    
+    </div><!-- end center -->
+  </div><!-- end content -->
+  
+	<!-- js -->
+	<script src="/js/jquery-2.1.3.min.js"></script>
+	<script src="/js/jquery-ui-widget.min.js"></script>
+	<script src="/js/jquery.selectBoxIt.min.js"></script>
+	<script src="/js/jquery.icheck.min.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/tooltipster.bundle.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Pattern Library - Links & Buttons</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+  <meta http-equiv="cleartype" content="on">
+  <!-- webfont -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- js -->
+	<script src="/js/modernizr-2.8.3.js"></script>
+	<script src="/js/detectizr-2.1.0.min.js"></script>
+	<!-- mobile & iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<link rel="apple-touch-icon-precomposed" href="/app-icon.png"/>
+</head>
+<body>
+  <header class="header">
+    <a class="logo-sm" href="/">Whare Hauora</a>
+    <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
+  </header><!-- end header -->
+  <div class="overlay"></div>
+  <nav class="menu">
+    <header>
+      <a class="logo" href="/">Whare Hauora</a>
+      <h6>Menu</h6>
+      <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+    </header>
+    <div class="nav">
+      <h6>Pattern Library</h6>
+      <ul class="nav-links">
+        <li><a href="/pattern-lib/text.html">Text</a></li>
+        <li><a class="current" href="/pattern-lib/links.html">Links & Buttons</a></li>
+        <li><a href="/pattern-lib/forms.html">Forms</a></li>
+        <li><a href="/pattern-lib/readings.html">Readings</a></li>
+        <li><a href="/pattern-lib/lists.html">Lists & Tables</a></li>
+        <li><a href="/pattern-lib/cards.html">Cards</a></li>
+        <li><a href="/pattern-lib/modals.html">Modals</a></li>
+        <li><a href="/pattern-lib/modals.html">Tooltips</a></li>
+      </ul>
+    </div>
+    <footer>
+      <select class="lang-picker">
+        <option value="English" data-iconurl="/img/icon/lang-eng.svg" selected>English</option>
+        <option value="Te Reo Māori" data-iconurl="/img/icon/lang-mri.svg">Te Reo Māori</option>
+        <option value="Samoan" data-iconurl="/img/icon/lang-smo.svg">Samoan</option>
+      </select>
+    </footer>
+  </nav><!-- end menu -->
+  <div class="content">
+    <div class="center">
+      <h1>Pattern Library: Links & Buttons</h1>
+      <section class="card">
+        <header>
+          <h2>Text Links</h2>
+        </header>
+        <p><a class="underline" href="#">Underline link</a></p>
+      </section>
+      <div class="note">
+        <p>Use class <code>underline</code> on a text link to create underline style.</p>
+        <h3>Example</h3>
+        <xmp><a class="underline" href="#">Link</a></xmp>
+      </div>
+      <section class="card">
+        <header>
+          <h2>Buttons</h2>
+        </header>
+        <a class="btn" href="#">Button</a>
+        <a class="btn disabled" href="#">Disabled</a>
+        <a class="btn alert" href="#">Alert Button</a>
+        <br />
+        <a class="btn" href="#"><img class="svg" src="/img/icon/btn-analyse.svg" alt="icon" />Analyse</a>
+        <a class="btn" href="#"><img class="svg" src="/img/icon/i.svg" alt="icon" />More info</a>
+        <a class="btn" href="#"><img class="svg" src="/img/icon/edit.svg" alt="icon" />Edit</a>
+        <br />
+        <a class="btn small" href="#">Small Button</a>
+        <a class="btn small disabled" href="#">Small Disabled</a>
+        <a class="btn small alert" href="#">Small Alert</a>
+      </section>
+      <div class="note">
+        <p>Use class <code>btn</code> on an <code>a</code> to turn it into a button. Do not use elements <code>button</code> or <code>input[type=submit]</code>. If a button should submit a form, add class <code>submit</code> to it.</p>
+        <h3>Example</h3>
+        <xmp><a class="btn" href="#">Button</a>
+<a class="btn submit" href="#">Submit</a></xmp>
+        <p>Add class <code>disabled</code> to make any button disabled.
+          <br />Add class <code>alert</code> to make any button red (use sparingly only when extra attention is needed).
+        </p>
+        <p>Insert an svg icon with class <code>svg</code> before the text (with no space between image tag and text) to add an icon to any button.</p>
+        <h3>Example</h3>
+        <xmp><a class="btn" href="#"><img class="svg" src="/img/icon/btn-analyse.svg" alt="icon" />Analyse</a></xmp>
+        <p>Add class <code>icon-only</code> to a button that contains only an icon and no text.</p>
+        <h3>Example</h3>
+        <xmp><a class="btn icon-only" href="#"><img class="svg" src="/img/icon/forward.svg" alt="next" /></a></xmp>
+        <p>Add class <code>small</code> to any button for the smaller size. <strong>Icons may not be used</strong> in small buttons.</p>
+      </div>
+      <section class="card">
+        <header>
+          <h2>Card buttons</h2>
+        </header>
+        <p>Used only for "more" and "sync" actions in setup and admin.</p>
+        <a class="btn-add append-middle" href="#"><img class="svg" src="/img/icon/btn-add.svg" alt="icon" />Add</a>
+        <a class="btn-add append-bottom" href="#"><img class="svg" src="/img/icon/btn-sync.svg" alt="icon" />Sync</a>
+      </section>
+      <div class="note">
+        <p>Use class <code>btn-add</code> on an <code>a</code> to turn it into a large card button. The icon is inserted in same way as normal icon button.</p>
+          <br />Add class <code>append-table</code> if the button falls below a table and indicates creation of new table row (e.g. room list).
+          <br />Add class <code>append-card</code> if the button falls below a card and indicates creation of new card (e.g. new whare).
+          <br />Add class <code>append-top</code> if the button is the first piece of card content below card header (and also add class <code>condensed</code> to card header).
+          <br />Add class <code>append-middle</code> if the button falls between two pieces of content in a card.
+        </p>
+        <h3>Examples</h3>
+        <xmp><a class="btn-add append-table" href="#"><img class="svg" src="/img/icon/btn-add.svg" alt="icon" />Add</a>
+<a class="btn-add append-card" href="#"><img class="svg" src="/img/icon/btn-add.svg" alt="icon" />Add</a>
+<a class="btn-add append-top" href="#"><img class="svg" src="/img/icon/btn-add.svg" alt="icon" />Add</a>
+<a class="btn-add append-middle" href="#"><img class="svg" src="/img/icon/btn-add.svg" alt="icon" />Add</a></xmp>
+      </div>
+      <section class="card">
+        <header>
+          <h2>Pagination</h2>
+        </header>
+        <div class="pagination">
+          <a class="btn" href="#">First</a>
+          <a class="btn icon-only" href="#"><img class="svg" src="/img/icon/back.svg" alt="prev" /></a>
+          <div class="pages">
+            <a class="current" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+          </div>
+          <a class="btn icon-only" href="#"><img class="svg" src="/img/icon/forward.svg" alt="next" /></a>
+          <a class="btn" href="#">Last</a>
+        </div>
+      </section>
+      <div class="note">
+        <p>Use the full pagination block on any page with a list/table that is too long to fit on a single page. If there are more than 5 pages of results, show page number links ONLY for the current page, and the 4 pages immediately around it. Use class <code>current</code> on the current page number link.</p>
+        <h3>Example</h3>
+        <xmp><div class="pagination">
+  <a class="btn" href="#">First</a>
+  <a class="btn icon-only" href="#"><img class="svg" src="/img/icon/back.svg" alt="prev" /></a>
+  <div class="pages">
+    <a class="current" href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+  </div>
+  <a class="btn icon-only" href="#"><img class="svg" src="/img/icon/forward.svg" alt="next" /></a>
+  <a class="btn" href="#">Last</a>
+</div></xmp>
+      </div>
+    </div><!-- end center -->
+  </div><!-- end content -->
+  
+	<!-- js -->
+	<script src="/js/jquery-2.1.3.min.js"></script>
+	<script src="/js/jquery-ui-widget.min.js"></script>
+	<script src="/js/jquery.selectBoxIt.min.js"></script>
+	<script src="/js/jquery.icheck.min.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/tooltipster.bundle.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+</html>

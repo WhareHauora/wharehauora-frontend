@@ -1,0 +1,7 @@
+# Mac OS X hidden files
+.DS_Store
+
+# Sass Cache
+**/.sass-cache
+**/.sass-cache/*
+.scssc

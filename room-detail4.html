@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Room Detail - expired / connectivity issue</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+  <meta http-equiv="cleartype" content="on">
+  <!-- webfont -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- js -->
+	<script src="/js/modernizr-2.8.3.js"></script>
+	<script src="/js/detectizr-2.1.0.min.js"></script>
+	<!-- mobile & iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<link rel="apple-touch-icon-precomposed" href="/app-icon.png"/>
+</head>
+<body>
+  <header class="header">
+    <a class="logo-sm" href="/">Whare Hauora</a>
+    <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
+  </header><!-- end header -->
+  <div class="overlay"></div>
+  <nav class="menu">
+    <header>
+      <a class="logo" href="/">Whare Hauora</a>
+      <h6>Menu</h6>
+      <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+    </header>
+    <div class="nav">
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+      <h6>Rooms</h6>
+      <ul class="nav-links">
+        <li><a class="current" href="/room-detail1.html">Living Room</a></li>
+        <li><a href="/room-detail2.html">Master Bedroom</a></li>
+        <li><a href="/room-detail3.html">Kid's Room</a></li>
+      </ul>
+      <h6>Setup</h6>
+      <ul class="nav-links">
+        <li><a href="/rooms.html">Whare & Rooms</a></li>
+        <li><a href="/whanau.html">Whānau</a></li>
+      </ul>
+      <h6>Account</h6>
+      <ul class="nav-links">
+        <li><a href="/account.html">My Account</a></li>
+        <li><a href="/help.html">Whānau</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+    <footer>
+      <select class="lang-picker">
+        <option value="English" data-iconurl="/img/icon/lang-eng.svg" selected>English</option>
+        <option value="Te Reo Māori" data-iconurl="/img/icon/lang-mri.svg">Te Reo Māori</option>
+        <option value="Samoan" data-iconurl="/img/icon/lang-smo.svg">Samoan</option>
+      </select>
+    </footer>
+  </nav><!-- end menu -->
+  <div class="content">
+    <div class="center">
+      <h1 class="sm narrow-down-only"><a class="back" href="#"><img class="svg" src="/img/icon/back.svg" alt="back" /></a>Lisefski House</h1>
+      <section class="card alert">
+        <header>
+          <h2 class="secondary">Cannot read sensor</h2>
+          <a class="head-action" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+        </header>
+        <p class="restrict-width">We haven’t heard from this room’s sensor in over 8 hours. The battery may need to be replaced.</p>
+        <div class="right-action">
+          <a class="btn small" href="#">Learn how to fix this</a>
+        </div>
+        <footer>
+          <p><a class="underline" href="#">Dismiss alert</a> and don't show again.</p>
+        </footer>
+      </section>
+      <section class="card report expired">
+        <header>
+          <h2>Living Room</h2>
+          <h4>Living Space</h4>
+          <a class="head-action" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
+        </header>
+        <div class="readings">
+          <div class="reading temp-mid-a">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">22.5°C</span>
+            <span class="label">Temperature</span>
+            <span class="time">9 hours ago</span>
+          </div>
+          <div class="reading hum-mid-a">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">51.0%</span>
+            <span class="label">Humidity</span>
+            <span class="time">9 hours ago</span>
+          </div>
+          <div class="reading dew-mid">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">11.9°C</span>
+            <span class="label">Dewpoint</span>
+            <span class="time">9 hours ago</span>
+          </div>
+        </div>
+        <div class="report-card grade-high expired">
+          <div class="rating">
+            <span class="grade">A</span>
+            <span class="value">Excellent</span>
+            <span class="label">Rating</span>
+          </div>
+          <ul class="check">
+            <li>Comfortable temperature</li>
+            <li>Comfortable humidity</li>
+            <li>Acceptable dewpoint</li>
+            <li>Temp is well above dewpoint<a class="i tooltip" href="#" title="<h6>Dewpoint</h6><p>When the temperature in this room falls below 11.9°C moisture begins to form on surfaces, leading to mould growth.</p><p><a href='#'>Click for more info</a></p>"><img class="svg" src="/img/icon/i.svg" alt="info" /></a></li>
+            <li>Room appears healthy, warm, & dry</li>
+          </ul>
+        </div>
+      </section>
+      <section class="card">
+        <header class="condensed">
+          <h2>Readings</h2>
+          <h4>Past 30 days</h4>
+          <ul class="legend">
+            <li><span class="temp"></span>Temperature</li>
+            <li><span class="hum"></span>Humidity</li>
+          </ul>
+        </header>
+        <div class="graph">
+          <div class="scroller">
+            <img class="placeholder" src="/img/placeholder-graph.png" />
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <header>
+          <h2>Sensor<span class="sensor">146</span></h2>
+        </header>
+        <dl class="col4 restrict-width">
+          <dt>First Detected</dt>
+          <dd>04 Jul, 2017</dd>
+          <dt>Last reading</dt>
+          <dd>9 hours ago</dd>
+          <dt>Battery</dt>
+          <dd>2%</dd>
+          <dt>Software</dt>
+          <dd>v2.1</dd>
+        </dl>
+        <div class="right-action">
+          <a class="btn small alert" href="#">Fix connectivity</a>
+        </div>
+      </section>
+    </div><!-- end center -->
+  </div><!-- end content -->
+  
+	<!-- js -->
+	<script src="/js/jquery-2.1.3.min.js"></script>
+	<script src="/js/jquery-ui-widget.min.js"></script>
+	<script src="/js/jquery.selectBoxIt.min.js"></script>
+	<script src="/js/jquery.icheck.min.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/tooltipster.bundle.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+/* /////////////////////////////////
+	Nav Links
+///////////////////////////////// */
+
+.nav-links {
+  list-type: none;
+  margin: 0 18px 0 2px;
+  
+  li {
+    // override LI defaults
+    list-type: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+  }
+  
+  a {
+    display: block;
+    padding: 11px 30px 9px 28px;
+    border-radius: 0 3px 3px 0;
+    font-size: $fs-lg;
+    line-height: 20px;
+    color: $c-md;
+  
+    .no-touch &:hover {
+      color: $c-link;
+    }
+    
+    .no-touch &:active {
+      color: $c-act;
+    }
+    
+    &.current {
+      color: $c-link;
+      background: $bg;
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Form rows
+///////////////////////////////// */
+
+.form-row {
+  @extend %clearfix;
+  max-width: 756px;
+  margin-top: 24px;
+  margin-right: -18px;
+  margin-bottom: 30px;
+  
+  .inset & {
+    margin: 12px 0 0;
+  }
+  
+  > li {
+    // override LI defaults
+    list-type: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    // styling
+    float: left;
+    clear: left;
+    width: calc(100% - 18px);
+    margin-right: 18px;
+    margin-bottom: 18px;
+    
+    // two side by side inputs
+    
+    &.half {
+      width: calc(50% - 18px);
+      clear: none;
+    }  
+    
+    // add space above
+    
+    &.space {
+      padding-top: 14px;
+    }  
+  }
+  
+  label {
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .helper {
+    font-size: $fs-xs;
+    line-height: $lh-xs;
+    color: $c-md;
+  }
+  
+  .btn {
+    margin-top: 6px !important;
+  }
+  
+  > li.error {
+    
+    label {
+      color: $c-alert;
+    }
+  }
+  
+  &.inline,
+  .inset &.inline {
+    max-width: 100%;
+    margin: 0;
+    
+    > li {
+      clear: none;
+      margin-bottom: 0 !important;
+    
+      &.small {
+        width: calc(17% - 18px);
+        clear: none;
+        
+        label {
+          white-space: nowrap;
+        }
+      }
+      
+      &.button {
+        width: auto;
+        clear: none;
+        margin-right: 0;
+        
+        .btn {
+          margin-top: 27px !important;
+        }
+      }
+    }
+  }
+  
+  @include for-mob-only {
+    margin-top: 20px;
+    margin-right: 0;
+    margin-bottom: 24px;
+    
+    > li {
+      float: none;
+      width: 100%;
+      margin-right: 0;
+      
+      &.half {
+        width: 100%;
+      }   
+    }
+    
+    label {
+      display: block;
+      margin-right: 0;
+    }
+    
+    .helper {
+      display: block;
+      margin-top: -4px;
+      margin-bottom: 9px;
+    }
+    
+    &.inline,
+    .inset &.inline {
+      
+      > li {
+        clear: none;
+        margin-bottom: 16px !important;
+        
+        &:last-child {
+          margin-bottom: 0 !important;
+        }
+      
+        &.small {
+          width: calc(50% - 12px);
+          float: left;
+          clear: none;
+          margin-right: 12px;
+        }
+        
+        &.button {
+          width: auto;
+          clear: none;
+          margin-right: 0;
+          
+          .btn {
+            margin-top: 27px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Form controls
+///////////////////////////////// */
+
+.form-controls {
+  margin: 6px 0 0;
+  
+  > li {
+    // override LI defaults
+    list-type: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    // styling
+    margin-bottom: 6px;
+    padding-left: 40px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    label {
+      margin: 0;
+      font-size: $fs-md;
+      line-height: $lh-lg;
+      font-weight: 400;
+      color: $c-md;
+      text-transform: none;
+      letter-spacing: 0;
+      text-align: left !important;
+    }
+    
+    span.sensor {
+      height: 24px;
+      padding: 0 10px;
+      line-height: 24px;
+      border-radius: 12px;
+      margin-right: 8px;
+    }
+    
+    .icheckbox,
+    .iradio {
+      float: left;
+      margin-left: -40px;
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Sensor alerts (in alert card)
+///////////////////////////////// */
+
+.sensor-alerts {
+  margin: -24px -12px -16px;
+  
+  li {
+    // override LI defaults
+    list-type: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    // styling
+    @extend %clearfix;
+    padding: 12px 12px;
+    
+    border-bottom: $b;
+    
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  
+  .sensor {
+    float: left;
+    margin-right: 12px;
+  }
+  
+  .time {
+    float: left;
+    line-height: 32px;
+  }
+  
+  .btn {
+    float: right;
+    margin: 0;
+  }
+  
+  @include for-mob-only {
+    margin-top: -20px;
+    margin-bottom: -20px;
+    
+    li {
+      padding: 16px 12px 18px;
+    }
+    
+    .sensor {
+      float: none;
+    }
+    
+    .time {
+      display: block;
+      float: none;
+      line-height: $lh-md;
+      margin: 8px 0 12px;
+    }
+    
+    .btn {
+      display: block;
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Graph Legend
+///////////////////////////////// */
+
+.legend {
+  margin: 0;
+  
+  li {
+    // override LI defaults
+    list-type: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    // styles
+    display: inline-block;
+    margin-left: 24px;
+    font-size: $fs-sm;
+    line-height: $lh-sm;
+  }
+  
+  .temp,
+  .hum {
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    position: relative;
+    top: -1px;
+  }
+  
+  .temp {
+    background: $temp;
+    border-radius: 2px;
+  }
+  
+  .hum {
+    background: rgba($temp,.33);
+    border-radius: 50%;
+  }
+  
+  @include for-mob-only {
+    
+    li {
+      margin-left: 0;
+      margin-right: 24px;
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Table Lists
+///////////////////////////////// */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  margin: 0;
+  line-height: $lh-md;
+}
+
+tr th {
+  padding: 4px 0 12px 30px;
+  font: 700 #{$fs-xs}/#{$lh-xs} $f-sans;
+  color: $c;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  vertical-align: bottom;
+  
+  &:last-child {
+    padding-right: 30px;
+  }
+}
+
+tr:not(.spacer) td {
+  padding: 14px 0 14px 30px;
+  background: $bg-lt;
+  border-top: $b;
+  border-bottom: $b;
+  vertical-align: middle;
+  
+  &:first-child {
+    border-left: $b;
+    border-radius: 6px 0 0 6px;
+  }
+  
+  &:last-child {
+    padding-right: 30px;
+    border-right: $b;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  &.actions {
+    min-width: 96px;
+    padding-left: 0;
+    text-align: right;
+  }
+  
+  &.unbreak {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .sub {
+    display: block;
+    font-size: $fs-md;
+    color: $c-md;
+  }
+  
+  .sensor {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -4px 0;
+  }
+  
+  dl {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+  }
+  
+  .sensor-group {
+    
+    .sensor {
+      margin-right: 12px;
+    }
+    
+    dl {
+      margin-top: 2px;
+    }
+  }
+  
+  a.btn {
+    margin: 0 !important;
+    vertical-align: middle;
+    text-align: left !important;
+  }
+  
+  a.table-action {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 26px;  
+  }
+  
+  a:not(.btn, .table-action) {
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
+tr.spacer td {
+  height: 6px;
+}
+
+@include for-mob-only {
+
+  table {
+    width: calc(100% + 24px);
+    margin: 0 -12px;
+    font-size: $fs-sm;
+    line-height: $lh-sm;
+  }
+  
+  tr th {
+    padding: 4px 0 12px 18px;
+    
+    &:last-child {
+      padding-right: 18px;
+    }
+  }
+  
+  tr:not(.spacer) td {
+    padding: 12px 0 12px 18px;
+
+    &:last-child {
+      padding-right: 18px;
+    }
+    
+    &.actions {
+      min-width: 0;
+    }
+    
+    &.unbreak {
+      max-width: 160px;
+    }
+    
+    a.table-action {
+      margin-left: 0;  
+    }
+  }
+  
+  table.mob-break {
+  
+    tr:not(.spacer) td {
+      display: block;
+      border-top: 0;
+      border-bottom: 0;
+      border-left: $b;
+      border-right: $b;
+      padding: 8px 18px;
+      
+      &:first-child {
+        border-top: $b;
+        border-radius: 6px 6px 0 0;
+        padding: 16px 18px 8px;
+      }
+      
+      &:last-child {
+        border-bottom: $b;
+        border-radius: 0 0 6px 6px;
+        padding: 8px 18px 16px;
+      }
+      
+      &.actions {
+        padding: 12px 0 0 0 !important;
+        
+        .btn {
+          border-radius: 0 0 5px 5px;
+        }
+      }
+    }
+  }
+}

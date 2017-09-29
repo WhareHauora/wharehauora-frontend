@@ -1,0 +1,275 @@
+/* /////////////////////////////////
+	Type
+///////////////////////////////// */
+
+// default
+
+body {
+	font: 400 #{$fs-lg}/#{$lh-lg} $f-sans;
+	color: $c;
+	text-align: left;
+}
+
+// page title (whare name, etc.)
+
+h1 {
+  margin: 0 0 $vert-md 0;
+  font: 300 #{$fs-title}/#{$lh-title} $f-sans;
+  color: $c-md;
+  
+  // larger page titles (login, sign up, etc.)
+  
+  &.lg {
+    font-size: $fs-title-lg;
+    line-height: $lh-title-lg; 
+    color: $c;
+    text-align: center;
+  }
+  
+  // smaller page titles often tablet and mobile only
+  
+  &.sm {
+    margin: -12px 0 ($vert-md - 24px) 0;
+    font-size: $fs-lg;
+    line-height: $lh-md;
+    font-weight: 400;
+  }
+  
+  @include for-narrow-down {
+    margin-bottom: $vert-md - 10px;
+  }
+  
+  @include for-mob-only {
+    margin-bottom: $vert-sm;
+    padding-left: 8px;
+    font-size: $fs-lg;
+    line-height: $lh-md;
+    font-weight: 400;
+    
+    &.lg {
+      font-size: $fs-heading;
+      line-height: $lh-heading;
+    }
+    
+    &.sm {
+      margin: 0 0 $vert-sm 0;
+    }
+  }
+}
+
+// card titles
+
+h2 {
+  margin: 0;
+  font: 700 #{$fs-heading}/#{$lh-heading} $f-slab;
+  color: $c;
+  
+  // card titles that collapse to smaller size on mobile (e.g. alert headings)
+  
+  &.secondary {
+  
+    @include for-mob-only {
+      font-size: $fs-heading-sm;
+      line-height: $lh-heading-sm;
+    }    
+  }
+  
+  // green heading
+  
+  &.accent {
+    color: $c-brand;
+  }
+  
+  // sensor pill after heading
+  
+  .sensor {
+    margin: -4px 12px;
+    position: relative;
+    top: -3px;
+  }
+}
+
+// smaller / inset card titles
+
+h3 {
+  margin: 0;
+  font: 700 #{$fs-heading-sm}/#{$lh-heading-sm} $f-slab;
+  color: $c;
+}
+
+// card sub-headings
+
+h4 {
+  margin: 0;
+  font: 400 #{$fs-md}/#{$lh-md} $f-sans;
+	color: $c-md;
+	
+	// page sub-heading / intro
+	
+	&.lg {
+	  font-size: $fs-lg;
+    fline-height: $lh-lg;
+	}
+}
+
+// smaller / inset card sub-headings
+
+h5 {
+  margin: 0;
+  font: 400 #{$fs-sm}/#{$lh-sm} $f-sans;
+	color: $c-md;
+}
+
+// label style uppercase heading
+
+h6 {
+  margin: 0;
+  font: 700 #{$fs-xs}/#{$lh-xs} $f-sans;
+  color: $c;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+// text
+
+p {
+  margin: 24px 0 0 0;
+  
+  &.sm {
+    margin-top: 18px;
+    font-size: $fs-md;
+    line-height: $lh-md;
+  }
+  
+  @include for-mob-only {
+    margin-top: 18px;
+    font-size: $fs-md;
+    line-height: $lh-md;
+    
+    &.sm {
+      margin-top: 16px;
+      font-size: $fs-sm;
+      line-height: $lh-sm;
+    }
+  }
+}
+
+p.light,
+span.light {
+  color: $c-md;
+}
+
+// lists
+
+ul,
+ol {
+	margin: 24px 0 0 0;
+	font-size: $fs-md;
+  line-height: $lh-md;
+  color: $c-md;
+  
+  > li {
+    margin-bottom: 10px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  @include for-mob-only {
+    margin-top: 20px;
+  }
+}
+
+ul {
+
+   > li {
+     list-style: none;
+     padding-left: 30px;
+     background: transparent url('/img/bullet.svg') no-repeat 3px 8px;
+   }
+   
+   &.check {
+   
+     > li {
+       background: transparent url('/img/bullet-check.svg') no-repeat left 6px;
+       
+       &.bullet {
+         background: transparent url('/img/bullet.svg') no-repeat 3px 8px;
+       }
+       
+       &.none {
+         background-image: none;
+       }
+     }
+   }
+}
+
+ol {
+  margin-left: 16px;
+
+  > li {
+     padding-left: 14px;
+   }
+}
+
+label,
+dt {
+  display: block;
+  margin: 0;
+  font: 700 #{$fs-xs}/#{$lh-xs} $f-sans;
+  color: $c;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+dl {
+  margin: 24px 0 0 0;
+	font-size: $fs-sm;
+  line-height: $lh-sm;
+  color: $c-md;
+  
+  dt {
+    margin-bottom: 2px;
+  }
+  
+  dd {
+    margin-bottom: 16px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &.col4 {
+    column-count: 4;
+    column-width: 25%;
+    
+    dd {
+      margin-bottom: 0;
+    }
+  }
+  
+  @include for-mob-only {
+    margin-top: 20px;
+    
+    &.col4 {
+      margin-right: -12px;
+      column-count: 2;
+      column-width: 50%;
+      
+      dd {
+        margin-bottom: 0;
+        
+        &:nth-child(4n+2) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+b,
+strong {
+  font-weight: 700;
+}

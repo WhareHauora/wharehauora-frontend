@@ -1,0 +1,835 @@
+/* /////////////////////////////////
+	Cards & Containers
+///////////////////////////////// */
+
+.card {
+  position: relative;
+  box-sizing: border-box;
+  background: $bg-white;
+  border: $b-over;
+  border-radius: 5px;
+  background-clip: padding-box;
+  padding: 0 $pad-card-lg 24px $pad-card-lg;
+  margin-bottom: 30px;
+  
+  > header {
+    position: relative;
+    margin: 0 -12px 24px;
+    padding: 24px 40px 18px 12px;
+    border-bottom: $b;
+    
+    &.condensed {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+    
+    .legend {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 24px 12px 0;
+    }
+  }
+  
+  a.head-action {
+    position: absolute;
+    top: 18px;
+    right: 0;
+  }
+  
+  .restrict-width {
+    max-width: calc(100% - 220px);
+  }
+  
+  .btn {
+    margin: 24px 0 0 0;
+  }
+  
+  .right-action {
+    float: right;
+    margin-top: -30px;
+    
+    .btn {
+      margin-top: 0 !important;
+    }
+  }
+  
+  > footer {
+    @extend %clearfix;
+    max-height: 44px;
+    margin: 24px -12px -24px;
+    padding: 18px 12px;
+    border-top: $b;
+    
+    .btn {
+      float: left;
+      margin-top: 0;
+      margin-right: 16px;
+    }
+    
+    .del {
+      float: right;
+      margin-top: 13px;
+    }
+  }
+  
+  @include for-narrow-down {
+    margin-bottom: ($vert-md / 2);
+  }
+  
+  @include for-tab-only {
+    
+    .restrict-width {
+      max-width: 100%;
+    }
+    
+    .right-action {
+      float: none;
+      margin-top: 24px;
+    }
+  }
+  
+  @include for-mob-only {
+    padding: 0 $pad-card-sm 20px $pad-card-sm;
+    margin-bottom: $vert-sm;
+    
+    > header {
+      margin: 0 -12px 20px;
+      padding: 20px 36px 14px 12px;
+      
+      .legend {
+        position: static;
+        padding: 12px 0 0;
+      }
+    }
+    
+    a.head-action {
+      top: 16px;
+      right: 2px;
+    }
+    
+    .restrict-width {
+      max-width: 100%;
+    }
+    
+    .btn {
+      display: block;
+      margin-top: 20px;
+    }
+    
+    .right-action {
+      float: none;
+      margin-top: 20px;
+    }
+    
+    > footer {
+      max-height: none;
+      margin: 20px -12px -20px;
+      padding: 14px 12px;
+      
+      .btn {
+        display: block;
+        float: none;
+        width: calc(100% + 16px);
+        margin: 12px -8px 0 -8px;
+        
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      
+      .del {
+        float: none;
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+// inset box in card
+
+.inset {
+  margin: 24px 0;
+  padding: 24px $pad-card-lg;
+  border: $b;
+  border-radius: 5px;
+  
+  &.append-top {
+    margin-top: 0;
+  }
+  
+  @include for-mob-only {
+    margin: 20px -12px;
+    padding: 20px ($pad-card-sm - 4px);
+  }
+}
+
+// graph
+
+.graph {
+  margin: 20px 0 0;
+  overflow-x: auto;
+
+  .scroller {
+    min-width: 566px;
+  }
+  
+  .placeholder {
+    width: 100%;
+    height: 304px;
+  }
+}
+
+/* /////////////////////////////////
+	Room Summary
+///////////////////////////////// */
+
+.summary-grid {
+  @extend %clearfix;
+  
+  .card {
+    width: calc((100% - 48px) / 3);
+    float: left;
+    margin: 0 24px 30px 0;
+    
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    
+    > footer {
+      // override default footer
+      max-height: none;
+      margin: 24px -28px -22px;
+      padding: 18px 28px;
+      border: 0;
+      // style
+      background: $bg-md;
+      border-radius: 0 0 2px 2px;
+      transition: background-color ease .3s;
+      
+      &.grade-high {
+        background: $bg-high;
+      }
+      
+      &.grade-mid {
+        background: $bg-mid;
+      }
+      
+      &.grade-low {
+        background: $bg-low;
+      }
+            
+      p {
+        min-height: $lh-md * 2;
+        margin: 0 0 20px 0;
+        font-size: $fs-md;
+        line-height: $lh-md;
+        transition: opacity ease .3s;
+      }
+      
+      .btn {
+        display: block;
+        width: calc(100% + 20px);
+        margin: 0 -10px 0;
+      }
+    }
+    
+    .readings {
+      margin: 24px -30px -4px 0;
+      
+      .reading {
+        width: 50%;
+      }
+    }
+    
+    // expired 
+      
+    &.expired {
+    
+      > footer {
+        background: $bg-md !important;
+      }
+    }
+    
+    // loading
+    
+    &.loading {
+    
+      > footer {
+        background: $bg-md !important;
+        
+        p {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  
+  // custom breakpoints for summary card columns
+  
+  @media (min-width: $bp-lg) and (max-width: $bp-lg-grid - 1px) { 
+    
+    .card {
+      width: calc((100% - 24px) / 2);
+      
+      &:nth-child(3n) {
+        margin-right: 24px;
+      }
+      
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+  
+  @media (min-width: $bp-sm) and (max-width: $bp-md-grid - 1px) { 
+    
+    .card {
+      width: calc((100% - 24px) / 2);
+      
+      &:nth-child(3n) {
+        margin-right: 24px;
+      }
+      
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+  
+  // mobile
+  
+  @include for-mob-only {
+  
+    .card {
+      width: 100%;
+      margin: 0 0 $vert-sm 0;
+      
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+      
+      > footer {
+        margin: 20px -24px -18px;
+        padding: 16px 24px 16px;
+        
+        p {
+          margin-bottom: 16px;
+        }
+        
+        .btn {
+          width: calc(100% + 16px);
+          margin: 0 -8px 0;
+        }
+      }
+      
+      .readings {
+        margin: 20px -26px -4px 0;
+      }
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Room Report / Analysis
+///////////////////////////////// */
+
+.card.report {
+  @extend %clearfix;
+  position: relative;
+
+  > header {
+    position: absolute;
+    z-index: $z-base + 1;
+    top: 0;
+    left: $pad-card-lg;
+    right: $pad-card-lg;
+  }
+  
+  .readings {
+    position: relative;
+    z-index: $z-base;
+    width: 50%;
+    padding-right: $pad-card-lg;
+    float: left;
+    // move down below header on wide screens
+    padding-top: 93px;
+    
+    .reading {
+      width: 33.3%;
+    }
+  }
+  
+  .report-card {
+    @extend %clearfix;
+    position: relative;
+    z-index: $z-base;
+    box-sizing: border-box;
+    width: calc(50% + 28px);
+    padding: 0 $pad-card-lg;
+    margin: 2px (0 - $pad-card-lg + 2) -22px 0;
+    float: right;
+    background: $bg-md;
+    border-radius: 0 2px 2px 0;
+    transition: background-color ease .3s;
+    // move down below header on wide screens
+    padding-top: 93px;
+    
+    .rating {
+      float: left;
+      padding-right: $pad-card-lg * 1.5;
+      width: 33%;
+      min-width: 200px;
+    }
+    
+    ul.check {
+      float: left;
+      width: 66%;
+      max-width: calc(100% - 208px);
+      margin: 0;
+      padding: 34px 0 34px;
+    }
+    
+    &.grade-high {
+      background: $bg-high;
+      
+      .rating .grade,
+      .rating .value {
+        color: $c-grade-high;
+      }
+      
+      ul.check li.bullet {
+        background-image: url('/img/bullet-high.svg');
+      }
+    }
+    
+    &.grade-mid {
+      background: $bg-mid;
+      
+      .rating .grade,
+      .rating .value {
+        color: $c-grade-mid;
+      }
+      
+      ul.check li.bullet {
+        background-image: url('/img/bullet-mid.svg');
+      }
+    }
+    
+    &.grade-low {
+      background: $bg-low;
+      
+      .rating .grade,
+      .rating .value {
+        color: $c-grade-low;
+      }
+      
+      ul.check li.bullet {
+        background-image: url('/img/bullet-low.svg');
+      }
+    }
+    
+    &.expired {
+      background: $bg-md !important;
+      
+      .rating .grade,
+      .rating .value {
+        color: $c-lt !important;
+      }
+      
+      .rating .label {
+        color: $c-md !important;
+      }
+      
+      ul.check {
+        opacity: .33;
+      }
+    }
+    
+    &.loading {
+      background: $bg-md !important;
+      
+      > * {
+       opacity: 0;
+      }
+    }
+  }
+  
+  @media (min-width: $bp-lg) and (max-width: $bp-lg-grid - 1px) { 
+    padding-bottom: 2px;
+  
+    header {
+      position: relative;
+      left: 0;
+      right: 0;
+    }
+    
+    .readings {
+      width: auto;
+      float: none;
+      padding-top: 0;
+    }
+    
+    .report-card {
+      width: auto;
+      float: none;
+      padding-top: 0;
+      margin: 24px (0 - $pad-card-lg + 2) 0;
+      border-radius: 0 0 2px 2px;
+    }
+  }
+  
+  @media (max-width: $bp-md-grid - 1px) { 
+    padding-bottom: 2px;
+  
+    header {
+      position: relative;
+      left: 0;
+      right: 0;
+    }
+    
+    .readings {
+      width: auto;
+      float: none;
+      padding-top: 0;
+    }
+    
+    .report-card {
+      width: auto;
+      float: none;
+      padding-top: 0;
+      margin: 24px (0 - $pad-card-lg + 2) 0;
+      border-radius: 0 0 2px 2px;
+    }
+  }
+  
+  @include for-mob-only {
+    
+    .readings {
+      padding-right: 0;
+      margin: 20px -26px -4px 0;
+      
+      .reading {
+        width: 50%;
+        
+        &:nth-child(3) {
+          margin-top: 20px;
+          
+          .vis {
+            display: none;
+          }
+        }
+      }
+    }
+    
+    .report-card {
+      margin: 24px (0 - $pad-card-sm + 2) 0;
+      padding: 0 $pad-card-sm;
+      
+      .rating {
+        width: auto;
+        min-width: 0;
+        float: none;
+        padding-right: 0;
+        margin-right: 0 - $pad-card-sm + 2;
+      }
+      
+      ul.check {
+        width: auto;
+        max-width: 120%;
+        float: none;
+        padding: 6px 0 24px;
+        margin-right: -10px;
+      }
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Alert / Health Warning Card
+///////////////////////////////// */
+
+.card.alert {
+  border: $b-alert;
+  
+  .img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: $c;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 0 3px 3px 0;
+    
+    a.head-action {
+      right: 18px;
+    }
+  }
+  
+  > header {
+    padding-left: 12px + 42px;
+    background: transparent url('/img/icon/alert.svg') no-repeat 12px 24px;
+    
+    h2 {
+      color: $c-alert;
+    }
+  }
+  
+  > footer {
+    // override default footer
+    max-height: none;
+    margin: 24px -28px -22px;
+    padding: 14px 28px;
+    border: 0;
+    // style
+    background: $bg-md;
+    border-radius: 0 2px 2px 0;
+    font-size: $fs-md;
+    color: $c-md;
+    
+    p {
+      margin: 0;
+    }
+  }
+  
+  &.with-image {
+    padding-right: calc(50% + 28px);
+    
+    > header {
+    
+      a.head-action {
+        display: none; // put it in the image box instead!
+      }
+    }
+  }
+  
+  // health warning
+  
+  &.health-alert {
+    
+    > header {
+      background-image: url('/img/icon/health.svg');
+    }
+  }
+  
+  // responsive
+  
+  @media (min-width: $bp-lg) and (max-width: $bp-lg-grid - 1px) { 
+    
+    .img {
+      width: 36%;
+    }
+    
+    &.with-image {
+      padding-right: calc(36% + 28px);
+    }
+  }
+  
+  @media (min-width: $bp-sm) and (max-width: $bp-md-grid - 1px) { 
+    
+    .img {
+      width: 36%;
+    }
+    
+    &.with-image {
+      padding-right: calc(36% + 28px);
+    }
+  }
+  
+  @include for-mob-only {
+  
+    .img {
+      position: relative;
+      width: auto;
+      height: 200px;
+      margin: 0 (0 - $pad-card-sm);
+      border-radius: 3px 3px 0 0;
+      
+      a.head-action {
+        top: 16px;
+        right: 16px;
+      }
+    }
+  
+    > header {
+      padding-left: 12px + 28px;
+      background-position: 12px 21px;
+      background-size: 20px 20px;
+    }
+    
+    > footer {
+      margin: 20px -24px -18px;
+      padding: 14px 24px;
+    }
+    
+    &.with-image {
+      padding-right: $pad-card-sm;
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Pre-login cards
+///////////////////////////////// */
+
+.card.pre-log {
+  @extend %clearfix;
+
+  .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: $c;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .text {
+    position: relative;
+    box-sizing: border-box;
+    width: calc(50% + 30px);
+    min-height: 444px;
+    float: right;
+    margin: 0 (0 - $pad-card-lg) -24px;
+    padding: $vert-md ($pad-card-lg * 2);
+    
+    > footer {
+      @extend %clearfix;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 ($pad-card-lg * 2) $vert-md;
+      
+      p {
+        margin: 0;
+        font-size: $fs-md;
+        line-height: $lh-md;
+        color: $c-md;
+        
+        &.left {
+          float: left;
+        }
+        
+        &.right {
+          float: right;
+        }
+      }
+    }
+  }
+  
+  h2 {
+    margin-bottom: 32px;
+    
+    &.accent {
+      margin-top: -16px;
+    }
+  }
+  
+  .form-row {
+    margin-bottom: 0;
+  }
+  
+  @media (min-width: $bp-lg) and (max-width: $bp-lg-grid - 1px) {
+    
+    .img {
+      width: 36%;
+    }
+    
+    .text {
+      width: calc((100% + 60px) * .64);
+    }
+  }
+  
+  @media (min-width: $bp-sm) and (max-width: $bp-md-grid - 1px) { 
+  
+    .img {
+      width: 36%;
+    }
+    
+    .text {
+      width: calc((100% + 60px) * .64);
+      padding-left: $vert-md;
+      padding-right: $vert-md;
+      
+      > footer {
+        padding-left: $vert-md;
+        padding-right: $vert-md;
+      }
+    }
+  }
+  
+  @include for-mob-only {
+    
+    .img {
+      display: none;
+    }
+    
+    .text {
+      width: auto;
+      min-height: 364px;
+      float: none;
+      margin: 0;
+      padding: ($vert-sm * 1.6) 0;
+      
+      > footer {
+        padding: 0 0 ($vert-sm * .4);
+        
+        p {
+          text-align: center;
+          
+          &.right,
+          &.left {
+            float: none;
+          }
+          
+          &.right {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+    
+    h2 {
+      margin-bottom: 0;
+      text-align: center;
+      
+      &.accent {
+        margin-top: 16px;
+      }
+    }
+    
+    .form-row {
+      
+      label {
+        text-align: center;
+      }
+      
+      input[type=text],
+      input[type=password],
+      input[type=search],
+      input[type=email],
+      input[type=tel],
+      input[type=url],
+      input[type=number],
+      textarea {
+        text-align: center;
+      }
+      
+      .btn {
+        text-align: center;
+      }
+    }
+  }
+}
