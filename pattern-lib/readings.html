@@ -122,6 +122,29 @@
           </div>
         </div>
       </section>  
+      <div class="note">
+        <p>One or more <code>.reading</code>'s are always contained within a parent <code>.readings</code> container.</p>
+        <p>All readings follow the same basic structure of visualisation (colour and icon), value, label, and time.</p>
+        <h3>Example</h3>
+        <xmp><div class="reading temp-mid-a">
+  <span class="vis"><span class="loader"></span></span>
+  <span class="value">22.5°C</span>
+  <span class="label">Temperature</span>
+  <span class="time">5 minutes ago</span>
+</div></xmp>
+        <p>Temperature colour and icon (scale of 10) is determined by the class name on <code>.reading</code> as follows:</p>
+        <p><code>temp-high-2b</code> Very hot
+          <br /><code>temp-high-2a</code> Hot
+          <br /><code>temp-high-1b</code> Very warm
+          <br /><code>temp-high-1a</code> Warm
+          <br /><code>temp-mid-b</code> Comfortable warm
+          <br /><code>temp-mid-a</code> Comfortable cool
+          <br /><code>temp-low-1a</code> Cool
+          <br /><code>temp-low-1b</code> Very cool
+          <br /><code>temp-low-2a</code> Cold
+          <br /><code>temp-low-2b</code> Very cold
+        </p>
+      </div>
       <section class="card">
         <header>
           <h2>Humidity</h2>
@@ -165,6 +188,16 @@
           </div>
         </div>
       </section>  
+      <div class="note">
+        <p>Humidity colour and icon (scale of 6) is determined by the class name on <code>.reading</code> as follows:</p>
+        <p><code>hum-high-2b</code> Very Wet
+          <br /><code>hum-high-2a</code> Wet
+          <br /><code>hum-high-1b</code> Very damp
+          <br /><code>hum-high-1a</code> Damp
+          <br /><code>hum-mid-b</code> Comfortable damp
+          <br /><code>hum-mid-a</code> Comfortable dry
+        </p>
+      </div>
       <section class="card">
         <header>
           <h2>Dewpoint</h2>
@@ -190,6 +223,13 @@
           </div>
         </div>
       </section>  
+      <div class="note">
+        <p>Dewpoint colour and icon (scale of 3) is determined by the class name on <code>.reading</code> as follows:</p>
+        <p><code>dew-high-2</code> Very high
+          <br /><code>dew-high-1</code> High
+          <br /><code>dew-mid</code> Comfortable
+        </p>
+      </div>
       <section class="card">
         <header>
           <h2>Expired & Loading</h2>
@@ -209,6 +249,24 @@
           </div>
         </div>
       </section>
+      <div class="note">
+        <p>Add class <code>expired</code> to any <code>.reading</code> who's latest reading is too old to be accurate. This will create the light grey colouring.</p>
+        <h3>Example</h3>
+        <xmp><div class="reading temp-mid-a expired">
+  <span class="vis"><span class="loader"></span></span>
+  <span class="value">22.5°C</span>
+  <span class="label">Temperature</span>
+  <span class="time">8 hours ago</span>
+</div></xmp>
+        <p>Add class <code>loading</code> to any <code>.reading</code> (or the reading's parent container/card) while the value is loading. At the same time the value should be <code>00.0</code> and the "time since" should be <code>Loading...</code>. Once the data is received, insert the correct value and time, and then remove the <code>loading</code> class. Loading animation will display only while <code>loading</code> class is applied.</p>
+        <h3>Example</h3>
+        <xmp><div class="reading temp-mid-a loading">
+  <span class="vis"><span class="loader"></span></span>
+  <span class="value">00.0°C</span>
+  <span class="label">Temperature</span>
+  <span class="time">Loading...</span>
+</div></xmp>
+      </div>
     </div><!-- end center -->
   </div><!-- end content -->
     
