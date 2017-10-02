@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>admin & multi-whare navigation</title>
+	<title>Admin - Whare Types</title>
 	<link rel="shortcut icon" href="/favicon.ico">
 	<!-- meta -->
 	<meta charset="utf-8">
@@ -25,15 +25,11 @@
     <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
   </header><!-- end header -->
   <div class="overlay"></div>
-  <nav class="menu multi-whare">
+  <nav class="menu">
     <header>
       <a class="logo" href="/">Whare Hauora</a>
+      <h6>Menu</h6>
       <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
-      <select class="whare-picker">
-        <option value="Lisefski House" selected>Lisefski House</option>
-        <option value="Everybody loves Digby">Everybody loves Digby</option>
-        <option value="Rabid Technologies">Rabid Technologies</option>
-      </select>
     </header>
     <div class="nav">
       <ul class="nav-links">
@@ -59,7 +55,7 @@
       <h6>Admin</h6>
       <ul class="nav-links">
         <li><a href="/admin-whare.html">Whare</a></li>
-        <li><a href="/admin-whare-types.html">Whare Types</a></li>
+        <li><a class="current" href="/admin-whare-types.html">Whare Types</a></li>
         <li><a href="/admin-room-types.html">Room Types</a></li>
         <li><a href="/admin-users.html">Users</a></li>
         <li><a href="/admin-mqtt.html">MQTT</a></li>
@@ -76,15 +72,54 @@
   </nav><!-- end menu -->
   <div class="content">
     <div class="center">
-      <div class="note">
-        <h3>For multi-whare accounts</h3>
-        <p>Add class <code>multi-whare</code> to <code>nav.menu</code> to adjust height of <code>div.nav</code> to allow for the whare picker.</p>
-        <p>Add whare picker as <code>select.whare-picker</code> as last item in <code>nav.menu > header</code>.</p>
-      </div>
-      <div class="note">
-        <h3>For admin accounts</h3>
-        <p>Add admin links as a new <code>h6</code> and <code>ul.nav-links</code> at bottom of <code>div.nav</code>.</p>
-      </div>
+      <section class="card">
+        <header class="condensed">
+          <h2>Admin: Whare Types</h2>
+        </header>
+        <div class="inset append-top">
+          <ul class="form-row inline">
+            <li class="half">
+              <label>New whare type</label>
+              <input type="text" placeholder="Name" />
+            </li>
+            <li class="button">
+              <a class="btn submit" href="#">Add</a>
+            </li>
+          </ul>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td>Owner Occupier</td>
+              <td class="actions">
+                <a class="table-action del" href="#"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td>Private Rental</td>
+              <td class="actions">
+                <a class="table-action del" href="#"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td>Social Housing</td>
+              <td class="actions">
+                <a class="table-action del" href="#"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td>Workplace / Office</td>
+              <td class="actions">
+                <a class="table-action del" href="#"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+          </tbody>
+        </table>
+      </section>
     </div><!-- end center -->
   </div><!-- end content -->
   
@@ -94,6 +129,7 @@
 	<script src="/js/jquery.selectBoxIt.min.js"></script>
 	<script src="/js/jquery.icheck.min.js"></script>
 	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/tooltipster.bundle.min.js"></script>
 	<script src="/js/init.js"></script>
 </body>
 </html>

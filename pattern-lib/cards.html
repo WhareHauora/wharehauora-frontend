@@ -55,6 +55,21 @@
   <div class="content">
     <div class="center">
       <h1>Pattern Library: Cards</h1>
+      <div class="note">
+        <p>All cards are required to have a <code>header</code> and <code>h2</code> title. <code>h4</code> sub-title is optional. Cards with a save or delete action use a <code>footer</code> to house that buttons and links. Cards may include an action link in the top right corner with class <code>head-action</code>.</p>
+        <p>After every single table row in <code>tbody</code> (even the last one) there should be a spacer cell to add the gap between row boxes.</p>
+        <h3>Example</h3>
+        <xmp><section class="card">
+  <header>
+    <h2>Heading</h2>
+    <h4>Sub-heading</h4>
+  </header>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pellentesque vestibulum eros sit amet semper. Proin accumsan, odio a scelerisque egestas, tortor lectus euismod nisl, eget cursus leo nisi vel tortor. Donec non lorem eget massa pharetra accumsan. Curabitur sit amet ligula at dui euismod tincidunt id sodales eros. Mauris sagittis tortor id tempor pharetra. Duis vel lorem congue, malesuada ipsum ac, interdum justo. Suspendisse eget rutrum est. Mauris ut ipsum ut quam varius sagittis ac ac sapien. Phasellus auctor lectus purus, at ultrices ante scelerisque eget. Praesent gravida facilisis est at imperdiet. Etiam magna erat, tincidunt at risus vitae, pharetra suscipit dolor. Pellentesque leo nisl, blandit sed lobortis sed, dapibus sit amet justo. Praesent pulvinar eget lacus nec vulputate. Cras id arcu at risus tincidunt vehicula sit amet ut sapien. Praesent eleifend eros ipsum, id fringilla sapien euismod id. Vestibulum hendrerit convallis risus ac tristique.</p>
+  <footer>
+    <a class="btn" href="#">Action</a>
+  </footer>
+</section></xmp>
+      </div>
       <section class="card">
         <header>
           <h2>Card</h2>
@@ -65,8 +80,11 @@
         <header class="condensed">
           <h2>Card w/ condensed header</h2>
         </header>
-        <p>No bottom border on header, tighter vertical spacing. Used on pages like Setup or Admin that have list or white button as first content item.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pellentesque vestibulum eros sit amet semper. Proin accumsan, odio a scelerisque egestas, tortor lectus euismod nisl, eget cursus leo nisi vel tortor. Donec non lorem eget massa pharetra accumsan. Curabitur sit amet ligula at dui euismod tincidunt id sodales eros. Mauris sagittis tortor id tempor pharetra. Duis vel lorem congue, malesuada ipsum ac, interdum justo. Suspendisse eget rutrum est. Mauris ut ipsum ut quam varius sagittis ac ac sapien. Phasellus auctor lectus purus, at ultrices ante scelerisque eget. Praesent gravida facilisis est at imperdiet. Etiam magna erat, tincidunt at risus vitae, pharetra suscipit dolor. Pellentesque leo nisl, blandit sed lobortis sed, dapibus sit amet justo. Praesent pulvinar eget lacus nec vulputate. Cras id arcu at risus tincidunt vehicula sit amet ut sapien. Praesent eleifend eros ipsum, id fringilla sapien euismod id. Vestibulum hendrerit convallis risus ac tristique.</p>
       </section>
+      <div class="note">
+        <p>To remove the <code>header</code>'s bottom border and collapse space between first content element (when first content is a table or "add" button), add class <code>condensed</code> to the card's <code>header</code>.</p>
+      </div>
       <section class="card">
         <header>
           <h2>Card w/ sub-heading & header action</h2>
@@ -215,6 +233,44 @@
           </footer>
         </section>
       </div>
+      <div class="note">
+        <p>Room summary cards require a <code>.summary-grid</code> parent container for their grid layout, and a <code>summary</code> class on the <code>.card</code> for styling of their unique footers.</p>
+        <h3>Example Grid</h3>
+        <xmp><div class="summary-grid">
+  <section class="card summary"></section>
+  <section class="card summary"></section>
+  <section class="card summary"></section>
+</div></xmp>
+        <p>Room summary footers indicate room rating/grade with a class on the footer as follows: <code>grade-high</code>, <code>grade-mid</code>, <code>grade-low</code>. If no grade class is added to the footer, it will be a neutral grey.</p>
+        <p>Room summary footer status lines are limited to two short lines of text (including the link, if applicable). Please be very careful about text length here to avoid it breaking to three lines on narrower screens.</p>
+        <p>Expired and loading classes are described in more detail on <a href="/pattern-lib/readings.html" class="underline">Readings</a>. Apply the class to the entire <code>.card</code> and it will affect styling of both readings and footers.</p>
+        <h3>Example Summary Card</h3>
+        <xmp><section class="card summary">
+  <header>
+    <h2>Room Name</h2>
+    <h4>Room Type</h4>
+    <a class="head-action" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
+  </header>
+  <div class="readings">
+    <div class="reading temp-mid-a">
+      <span class="vis"><span class="loader"></span></span>
+      <span class="value">22.5°C</span>
+      <span class="label">Temperature</span>
+      <span class="time">5 minutes ago</span>
+    </div>
+    <div class="reading hum-mid-a">
+      <span class="vis"><span class="loader"></span></span>
+      <span class="value">51.0%</span>
+      <span class="label">Humidity</span>
+      <span class="time">5 minutes ago</span>
+    </div>
+  </div>
+  <footer class="grade-high">
+    <p>Slightly too cool, but otherwise healthy.</p>
+    <a class="btn" href="#"><img class="svg" src="/img/icon/btn-analyse.svg" alt="icon" />Analyse</a>
+  </footer>
+</section></xmp>
+      </div>
       <h1 class="inline">Room Detail Cards</h1>
       <section class="card report">
         <header>
@@ -339,6 +395,138 @@
           </ul>
         </div>
       </section>
+      <section class="card report expired">
+        <header>
+          <h2>Living Room</h2>
+          <h4>Living Space</h4>
+          <a class="head-action" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
+        </header>
+        <div class="readings">
+          <div class="reading temp-mid-a">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">22.5°C</span>
+            <span class="label">Temperature</span>
+            <span class="time">9 hours ago</span>
+          </div>
+          <div class="reading hum-mid-a">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">51.0%</span>
+            <span class="label">Humidity</span>
+            <span class="time">9 hours ago</span>
+          </div>
+          <div class="reading dew-mid">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">11.9°C</span>
+            <span class="label">Dewpoint</span>
+            <span class="time">9 hours ago</span>
+          </div>
+        </div>
+        <div class="report-card grade-high expired">
+          <div class="rating">
+            <span class="grade">A</span>
+            <span class="value">Excellent</span>
+            <span class="label">Rating</span>
+          </div>
+          <ul class="check">
+            <li>Comfortable temperature</li>
+            <li>Comfortable humidity</li>
+            <li>Acceptable dewpoint</li>
+            <li>Temp is well above dewpoint<a class="i tooltip" href="#" title="<h6>Dewpoint</h6><p>When the temperature in this room falls below 11.9°C moisture begins to form on surfaces, leading to mould growth.</p><p><a href='#'>Click for more info</a></p>"><img class="svg" src="/img/icon/i.svg" alt="info" /></a></li>
+            <li>Room appears healthy, warm, & dry</li>
+          </ul>
+        </div>
+      </section>
+      <section class="card report loading">
+        <header>
+          <h2>Living Room</h2>
+          <h4>Living Space</h4>
+          <a class="head-action" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
+        </header>
+        <div class="readings">
+          <div class="reading temp-mid-a">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">00.0°C</span>
+            <span class="label">Temperature</span>
+            <span class="time">Loading...</span>
+          </div>
+          <div class="reading hum-mid-a">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">00.0%</span>
+            <span class="label">Humidity</span>
+            <span class="time">Loading...</span>
+          </div>
+          <div class="reading dew-mid">
+            <span class="vis"><span class="loader"></span></span>
+            <span class="value">00.0°C</span>
+            <span class="label">Dewpoint</span>
+            <span class="time">Loading...</span>
+          </div>
+        </div>
+        <div class="report-card grade-high loading">
+          <div class="rating">
+            <span class="grade">A</span>
+            <span class="value">Excellent</span>
+            <span class="label">Rating</span>
+          </div>
+          <ul class="check">
+            <li>Comfortable temperature</li>
+            <li>Comfortable humidity</li>
+            <li>Acceptable dewpoint</li>
+            <li>Temp is well above dewpoint<a class="i tooltip" href="#" title="<h6>Dewpoint</h6><p>When the temperature in this room falls below 11.9°C moisture begins to form on surfaces, leading to mould growth.</p><p><a href='#'>Click for more info</a></p>"><img class="svg" src="/img/icon/i.svg" alt="info" /></a></li>
+            <li>Room appears healthy, warm, & dry</li>
+          </ul>
+        </div>
+      </section>
+      <div class="note">
+        <p>Room report cards require a <code>report</code> class on <code>.card</code>, and are coloured with the same three grade classes as room summaries. Please note that the <strong>grade class must be applied to both</strong> the <code>.card</code> and the card's <code>div.report-card</code>. Likewise, an expired or loading report card must have the <code>expired</code> or <code>loading</code> classes applied to both.</p>
+        <p><code>grade-high</code> for grades A-B.
+          <br /><code>grade-mid</code> for grades C-D.
+          <br /><code>grade-low</code> for grades E-F.
+        </p>
+        <p>The summary list on each report card should highlight both healthy and unhealthy aspects of a room: temp, humidity, dewpoint, etc. Unhealthy list items use <code>li.bullet</code> to remove the checkmark and highlight list item with grade-colour-coded bullet point. If a link is used as last list item, use <code>li.none</code> to remove checkmark entirely. List items may include info tooltips as described in <a class="underline" href="/pattern-lib/tooltips.html">Tooltips</a>.</p>
+        <h3>Example report card</h3>
+        <xmp><section class="card report">
+  <header>
+    <h2>Poor Room</h2>
+    <h4>Room Type</h4>
+    <a class="head-action" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
+  </header>
+  <div class="readings">
+    <div class="reading temp-mid-a">
+      <span class="vis"><span class="loader"></span></span>
+      <span class="value">22.5°C</span>
+      <span class="label">Temperature</span>
+      <span class="time">5 minutes ago</span>
+    </div>
+    <div class="reading hum-mid-a">
+      <span class="vis"><span class="loader"></span></span>
+      <span class="value">51.0%</span>
+      <span class="label">Humidity</span>
+      <span class="time">5 minutes ago</span>
+    </div>
+    <div class="reading dew-mid">
+      <span class="vis"><span class="loader"></span></span>
+      <span class="value">11.9°C</span>
+      <span class="label">Dewpoint</span>
+      <span class="time">5 minutes ago</span>
+    </div>
+  </div>
+  <div class="report-card grade-low">
+    <div class="rating">
+      <span class="grade">F</span>
+      <span class="value">Very Poor</span>
+      <span class="label">Rating</span>
+    </div>
+    <ul class="check">
+      <li class="bullet">Way too cold for children sleeping<a class="i tooltip" href="#" title="Tooltip content"><img class="svg" src="/img/icon/i.svg" alt="info" /></a></li>
+      <li class="bullet">High relative humidity</li>
+      <li>Acceptable dewpoint</li>
+      <li class="bullet">Risk for cold, damp, and mould<a class="i tooltip" href="#" title="Tooltip content"><img class="svg" src="/img/icon/i.svg" alt="info" /></a></li>
+      <li class="none"><a class="underline" href="#">Learn how to fix this</a></li>
+    </ul>
+  </div>
+</section></xmp>
+      </div>
       <section class="card">
         <header class="condensed">
           <h2>Readings</h2>
@@ -354,6 +542,9 @@
           </div>
         </div>
       </section>
+      <div class="note">
+        <p>Please put your responsive temp/humidity graph inside <code>.graph > .scroller</code>. This will give a min-width to graph so it becomes scrollable horizontally on mobile.</p>
+      </div>
       <section class="card">
         <header>
           <h2>Sensor<span class="sensor">146</span></h2>
@@ -372,6 +563,9 @@
           <a class="btn small" href="#">Disconnect from room</a>
         </div>
       </section>
+      <div class="note">
+        <p>When a card requires a right side action button, add class <code>restrict-width</code> on the text content, and then wrap the action button in <code>div.right-action</code> to position the button.</p>
+      </div>
       <h1 class="inline">Alert Cards</h1>
       <section class="card alert">
         <header>
@@ -427,6 +621,40 @@
           <p><a class="underline" href="#">Dismiss alert</a> – I’m happy with the temperature of this room</p>
         </footer>
       </section>
+      <div class="note">
+        <p>Alerts can contain basic text elements, sensor error list, buttons, and optional images. Alert cards with an image must have class <code>with-image</code> applied to the <code>.card</code>. Please do not use images in any other way within alerts.</p>
+        <p>Ensure the correct icon is applied before the alert heading by using either classes <code>alert</code> or <code>alert.health-alert</code> on the <code>.card</code>. An alert card's <code>h2</code> should always include class <code> secondary</code>.</p>
+        <p>Note that alerts have unique footers for the dismiss link, and therefor cannot use the normal card footer styling and content.</p>
+        <h3>Example Alerts</h3>
+        <xmp><section class="card alert">
+  <header>
+    <h2 class="secondary">Alert Heading</h2>
+    <h4>Card sub-heading</h4>
+    <a class="head-action" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+  </header>
+  <ul class="sensor-alerts">
+    <li><span class="sensor">253</span><span class="time">First detected about 1 month ago</span><a class="btn small" href="#">Assign to room</a></li>
+    <li><span class="sensor">45</span><span class="time">First detected 15 days ago</span><a class="btn small" href="#">Assign to room</a></li>
+  </ul>
+  <footer>
+    <p><a class="underline" href="#">Dismiss alert</a> and don't show again.</p>
+  </footer>
+</section></xmp><xmp><section class="card alert health-alert with-image">
+  <div class="img" style="background-image: url('/img/placeholder-illy1.jpg')">
+    <a class="head-action inv" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+  </div>
+  <header>
+    <h2 class="secondary">Health Warning w/ Image</h2>
+    <h4>Card sub-heading</h4>
+    <a class="head-action" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+  </header>
+  <p>The World Health Organisation recommends temperatures above 20 degrees for children. Allowing children to continue to sleep in this room without adequate heating may result in increased risk of respiratory illness. </p>
+  <a class="btn" href="#"><img class="svg" src="/img/icon/btn-i.svg" alt="icon" />Learn how to fix this</a>
+  <footer>
+    <p><a class="underline" href="#">Dismiss alert</a> – I’m happy with the temperature of this room</p>
+  </footer>
+</section></xmp>
+      </div>
       <h1 class="inline">Pre-logged-in Cards</h1>
       <section class="card pre-log">
         <div class="img" style="background-image: url('/img/placeholder-illy2.jpg')"></div>
@@ -486,6 +714,33 @@
           </footer>
         </div>
       </section>
+      <div class="note">
+        <p>These cards types are used ONLY on sign up, login, and forgot password. They must always include the image and are structured as <code>.img</code> and <code>.text</code> inside the <code>.card</code>. These cards do not use <code>header</code> - instead the <code>h2</code> is placed as first element of content inside <code>.text</code>. Secondary actions or text that stick to bottom of card are placed in a <code>footer</code> of <code>.text</code>. These cards cannot use normal card footers as they would interfere with the full height images.</p>
+        <h3>Example</h3>
+        <xmp><section class="card pre-log">
+  <div class="img" style="background-image: url('/img/placeholder-illy2.jpg')"></div>
+  <div class="text">
+    <h2 class="secondary">Login</h2>
+    <ul class="form-row">
+      <li>
+        <label>Text input</label>
+        <input type="text" />
+      </li>
+      <li>
+        <label>Text input</label>
+        <input type="password" />
+      </li>
+      <li>
+        <a class="btn submit" href="#">Submit</a>
+      </li>
+    </ul>
+    <footer>
+      <p class="left"><a href="#" class="underline">Forgot password?</a></p>
+      <p class="right">Don’t have an account? <a href="#" class="underline">Sign up</a></p>
+    </footer>
+  </div>
+</section></xmp>
+      </div>
     </div><!-- end center -->
   </div><!-- end content -->
     

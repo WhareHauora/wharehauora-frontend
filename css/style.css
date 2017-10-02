@@ -127,11 +127,6 @@ svg {
   text-indent: -1000em;
 }
 
-.hidden {
-  display: none !important;
-  visibility: hidden;
-}
-
 .clearfix:after,
 .readings:after,
 .rating:after,
@@ -326,6 +321,12 @@ h3 {
   color: #333;
 }
 
+h3 .sensor {
+  margin: -3px 12px;
+  position: relative;
+  top: -2px;
+}
+
 h4 {
   margin: 0;
   font: 400 14px/22px "Roboto", sans-serif;
@@ -438,6 +439,18 @@ dt {
   color: #333;
   text-transform: uppercase;
   letter-spacing: .1em;
+}
+
+label.hidden {
+  visibility: hidden;
+}
+
+@media (max-width: 699px) {
+  label.hidden {
+    display: none !important;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 dl {
@@ -3268,6 +3281,9 @@ input[type=radio] {
   }
   .form-row > li.half {
     width: 100%;
+  }
+  .form-row > li.collapse-mob {
+    margin-top: -12px;
   }
   .form-row label {
     display: block;

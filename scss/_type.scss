@@ -95,6 +95,14 @@ h3 {
   margin: 0;
   font: 700 #{$fs-heading-sm}/#{$lh-heading-sm} $f-slab;
   color: $c;
+  
+  // sensor pill after heading
+  
+  .sensor {
+    margin: -3px 12px;
+    position: relative;
+    top: -2px;
+  }
 }
 
 // card sub-headings
@@ -221,6 +229,16 @@ dt {
   color: $c;
   text-transform: uppercase;
   letter-spacing: .1em;
+}
+
+label.hidden {
+  visibility: hidden;
+  
+  @include for-mob-only {
+    display: none !important;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 dl {

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>admin & multi-whare navigation</title>
+	<title>My Account</title>
 	<link rel="shortcut icon" href="/favicon.ico">
 	<!-- meta -->
 	<meta charset="utf-8">
@@ -25,15 +25,11 @@
     <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
   </header><!-- end header -->
   <div class="overlay"></div>
-  <nav class="menu multi-whare">
+  <nav class="menu">
     <header>
       <a class="logo" href="/">Whare Hauora</a>
+      <h6>Menu</h6>
       <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
-      <select class="whare-picker">
-        <option value="Lisefski House" selected>Lisefski House</option>
-        <option value="Everybody loves Digby">Everybody loves Digby</option>
-        <option value="Rabid Technologies">Rabid Technologies</option>
-      </select>
     </header>
     <div class="nav">
       <ul class="nav-links">
@@ -52,18 +48,9 @@
       </ul>
       <h6>Account</h6>
       <ul class="nav-links">
-        <li><a href="/account.html">My Account</a></li>
+        <li><a class="current" href="/account.html">My Account</a></li>
         <li><a href="/help.html">Help</a></li>
         <li><a href="#">Logout</a></li>
-      </ul>
-      <h6>Admin</h6>
-      <ul class="nav-links">
-        <li><a href="/admin-whare.html">Whare</a></li>
-        <li><a href="/admin-whare-types.html">Whare Types</a></li>
-        <li><a href="/admin-room-types.html">Room Types</a></li>
-        <li><a href="/admin-users.html">Users</a></li>
-        <li><a href="/admin-mqtt.html">MQTT</a></li>
-        <li><a href="/admin-messages.html">Messages</a></li>
       </ul>
     </div>
     <footer>
@@ -76,15 +63,60 @@
   </nav><!-- end menu -->
   <div class="content">
     <div class="center">
-      <div class="note">
-        <h3>For multi-whare accounts</h3>
-        <p>Add class <code>multi-whare</code> to <code>nav.menu</code> to adjust height of <code>div.nav</code> to allow for the whare picker.</p>
-        <p>Add whare picker as <code>select.whare-picker</code> as last item in <code>nav.menu > header</code>.</p>
-      </div>
-      <div class="note">
-        <h3>For admin accounts</h3>
-        <p>Add admin links as a new <code>h6</code> and <code>ul.nav-links</code> at bottom of <code>div.nav</code>.</p>
-      </div>
+      <h1 class="sm narrow-down-only">My Account</h1>
+      <section class="card">
+        <header>
+          <h2>My Account</h2>
+        </header>
+        <ul class="form-row">
+          <li class="half">
+            <label>Name</label><span class="helper">(optional)</span>
+            <input type="text" placeholder="First / Given Name"/>
+          </li>
+          <li class="half collapse-mob">
+            <label class="hidden">Last Name</label>
+            <input type="text" placeholder="Last / Family Name"/>
+          </li>
+          <li class="max-half">
+            <label>Email Address</label>
+            <input type="text" />
+          </li>
+          <li class="half">
+            <label>Password</label><span class="helper">(Leave blank if you don't want to change it)</span>
+            <input type="password" />
+          </li>
+          <li class="half">
+            <label>Repeat Password</label><span class="helper">(Required if changing password)</span>
+            <input type="password" />
+          </li>
+          <li class="max-half">
+            <label>Current Password</label><span class="helper">(Required if changing password)</span>
+            <input type="password" />
+          </li>
+        </ul>
+        <footer>
+          <a class="btn submit" href="#">Save Changes</a>
+          <a class="del" href="#"><img class="svg" src="/img/icon/del.svg" alt="icon" />Cancel Account</a>
+        </footer>
+      </section>  
+      <section class="card">
+        <header>
+          <h2>Notification preferences</h2>
+        </header>
+        <ul class="form-row">
+          <li>
+            <ul class="form-controls">
+              <li><label><input type="checkbox" name="email_health_alert" value="yes" checked />Email me room health alerts</label></li>
+              <li><label><input type="checkbox" name="email_new_sensor" value="yes" />Email me when a new sensor is detected</label></li>
+              <li><label><input type="checkbox" name="email_sensor_unresponsive" value="yes" />Email me when a sensor is not responding</label></li>
+              <li><label><input type="checkbox" name="app_push" value="yes" />Allow push notifications through Whare Hauora app</label></li>
+            </ul>
+          </li>
+        </ul>
+        <footer>
+          <a class="btn submit" href="#">Save Preferences</a>
+        </footer>
+      </section> 
     </div><!-- end center -->
   </div><!-- end content -->
   
@@ -94,6 +126,7 @@
 	<script src="/js/jquery.selectBoxIt.min.js"></script>
 	<script src="/js/jquery.icheck.min.js"></script>
 	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/tooltipster.bundle.min.js"></script>
 	<script src="/js/init.js"></script>
 </body>
 </html>

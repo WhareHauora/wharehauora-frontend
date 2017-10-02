@@ -55,6 +55,12 @@
   <div class="content">
     <div class="center">
       <h1>Pattern Library: Lists & Tables</h1>
+      <div class="note">
+        <p>All of these complex list types demonstrated here use a standard <code>table</code> HTML structure. Please wrap all table rows in <code>tbody</code> and all header rows in <code>thead</code>. <code>tfoot</code> is not used. Table column headers are optional and aren't used on many list types.</p>
+        <p>After every single table row in <code>tbody</code> (even the last one) there should be a spacer cell to add the gap between row boxes.</p>
+        <h3>Example</h3>
+        <xmp><tr class="spacer"><td colspan="100"></td></tr></xmp>
+      </div>
       <section class="card">
         <header class="condensed">
           <h2>Whare & Rooms list</h2>
@@ -122,7 +128,11 @@
         </table>
         <a class="btn-add append-table" href="#"><img class="svg" src="/img/icon/btn-add.svg" alt="icon" />Add room</a>
       </section>
-      <a class="btn-add append-card" href="#"><img class="svg" src="/img/icon/btn-add.svg" alt="icon" />Add whare</a>
+      <div class="note">
+        <p>The whare table's sensor info cluster is a unique element that requires <code>.sensor-group</code> element surrounding the sensor number and definition list.</p>
+        <p>These tables mostly use icons at the end of each row for actions like edit or remove. However an <code>a.btn</code> can be used if there's only a single action per row.</p>
+        <p>The public-facing tables like this one above require a class <code>mob-break</code> to help them re-arrange on mobile. All admin tables and the whānau table should not use this extra class, as they already scale fine on mobile OR are not intended to scale for mobile.</p>
+      </div>
       <section class="card">
         <header class="condensed">
           <h2>Whānau List</h2>
@@ -214,72 +224,9 @@
           </tbody>
         </table>
       </section>
-      <section class="card">
-        <header class="condensed">
-          <h2>Admin: Room Types</h2>
-        </header>
-        <div class="inset append-top">
-          <ul class="form-row inline">
-            <li class="half">
-              <label>New room type</label>
-              <input type="text" placeholder="Name" />
-            </li>
-            <li class="small">
-              <label>Min Temp</label>
-              <input type="text" placeholder="°C" />
-            </li>
-            <li class="small">
-              <label>Max Temp</label>
-              <input type="text" placeholder="°C" />
-            </li>
-            <li class="button">
-              <a class="btn submit" href="#">Add</a>
-            </li>
-          </ul>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Min Temp</th>
-              <th>Max Temp</th>
-              <th>&nbsp;</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Baby's Room</td>
-              <td>21.0</td>
-              <td>30.0</td>
-              <td class="actions">
-                <a class="table-action edit" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
-                <a class="table-action del" href="#"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
-              </td>
-            </tr>
-            <tr class="spacer"><td colspan="100"></td></tr>
-            <tr>
-              <td>Child's Bedroom</td>
-              <td>18.0</td>
-              <td>28.0</td>
-              <td class="actions">
-                <a class="table-action edit" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
-                <a class="table-action del" href="#"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
-              </td>
-            </tr>
-            <tr class="spacer"><td colspan="100"></td></tr>
-            <tr>
-              <td>Living Space</td>
-              <td>16.0</td>
-              <td>35.0</td>
-              <td class="actions">
-                <a class="table-action edit" href="#"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
-                <a class="table-action del" href="#"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
-              </td>
-            </tr>
-            <tr class="spacer"><td colspan="100"></td></tr>
-          </tbody>
-        </table>
-      </section>
+      <div class="note">
+        <p>Text links within table cells are automatically bolded and underlined. <strong>The <code>a.underline</code> class does NOT need to be used inside tables.</strong></p>
+      </div>
       <section class="card">
         <header>
           <h2>Admin: Room Sensors</h2>
@@ -331,7 +278,6 @@
         <header>
           <h2>Admin: MQTT Provisioning</h2>
         </header>
-        <p>Sensors send readings to us over MQTT. This is an overview of provisioned accounts and credentials on our Mqtt Server. Each account has write-only access.</p>
         <a class="btn-add append-middle" href="#"><img class="svg" src="/img/icon/btn-sync.svg" alt="remove" />Sync with MQTT server</a>
         <table>
           <thead>
@@ -383,6 +329,9 @@
           </tbody>
         </table>
       </section>
+      <div class="note">
+        <p>When you need a table cell to have a primary line of info with secondary line below, you can use the <code>span.sub</code> class around the secondary line, which reduces size and darkness.</p>
+      </div>
       <section class="card">
         <header>
           <h2>Admin: Messages</h2>

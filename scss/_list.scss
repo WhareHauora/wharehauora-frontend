@@ -145,6 +145,10 @@
       &.half {
         width: 100%;
       }   
+      
+      &.collapse-mob {
+        margin-top: -12px;
+      }
     }
     
     label {
