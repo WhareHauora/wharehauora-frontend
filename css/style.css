@@ -430,6 +430,7 @@ h1.sm {
     line-height: 30px;
     font-weight: 300;
     margin-bottom: 0;
+    padding-left: 0;
   }
   h1.sm {
     margin: 0 0 16px 0;
