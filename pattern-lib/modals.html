@@ -61,7 +61,8 @@
         </header>
         <p>Click below to launch sample modals.</p>
         <a class="btn open-modal" href="#" data-mfp-src="#popup1">Launch text modal</a>
-        <a class="btn open-modal" href="#" data-mfp-src="#popup2">Launch form Modal</a>
+        <a class="btn open-modal" href="#" data-mfp-src="#popup2">Launch form modal</a>
+        <a class="btn open-modal" href="#" data-mfp-src="#popup3">Launch delete confirm modal</a>
       </section>
       <div class="note">
         <p>Apply class <code>open-modal</code> to the link or button and then put the ID of the modal content in the link's <code>data-mfp-src</code> attribute. Modal content must have <code>modal</code> class, matching <code>id</code>, and class <code>mfp-hide</code> to hide modal until triggered. Any link or button inside the modal with class <code>close</code> will trigger modal close on click.</p>
@@ -133,6 +134,17 @@
     <footer>
       <a class="btn close" href="#">Action</a>
       <a class="del" href="#"><img class="svg" src="/img/icon/del.svg" alt="icon" />Remove</a>
+    </footer>
+  </div>
+  <div id="popup3" class="modal alert mfp-hide">
+    <header>
+      <h2>Confirm Delete</h2>
+      <a class="head-action close" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+    </header>
+    <p>Are you sure want to delete _____________?</p>
+    <footer>
+      <a class="btn alert" href="#">Delete</a>
+      <a class="cancel close" href="#">Don't delete</a>
     </footer>
   </div>
   <!-- end demo modals -->

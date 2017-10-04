@@ -376,6 +376,7 @@ tr th {
   text-transform: uppercase;
   letter-spacing: .1em;
   vertical-align: bottom;
+  text-align: left;
   
   &:last-child {
     padding-right: 30px;
@@ -388,6 +389,7 @@ tr:not(.spacer) td {
   border-top: $b;
   border-bottom: $b;
   vertical-align: middle;
+  text-align: left;
   
   &:first-child {
     border-left: $b;

@@ -391,6 +391,23 @@ a.del.table-action svg {
   margin-right: 0 !important;
 }
 
+a.cancel {
+  display: inline-block;
+  height: 18px;
+  font-size: $fs-md;
+  line-height: 18px;
+  font-weight: bold;
+  color: $c-md;
+  
+  .no-touch &:hover {
+    color: $c;
+  }
+  
+  .no-touch &:active {
+    color: $c-act;
+  }
+}
+
 // table edit
 
 a.edit.table-action {

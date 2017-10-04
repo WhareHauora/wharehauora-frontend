@@ -20,6 +20,7 @@ h1 {
   // larger page titles (login, sign up, etc.)
   
   &.lg {
+    margin-bottom: 4px;
     font-size: $fs-title-lg;
     line-height: $lh-title-lg; 
     color: $c;
@@ -49,6 +50,8 @@ h1 {
     &.lg {
       font-size: $fs-heading;
       line-height: $lh-heading;
+      font-weight: 300;
+      margin-bottom: 0;
     }
     
     &.sm {
@@ -116,7 +119,13 @@ h4 {
 	
 	&.lg {
 	  font-size: $fs-lg;
-    fline-height: $lh-lg;
+    line-height: $lh-lg;
+    text-align: center;
+    
+    @include for-mob-only {
+      font-size: $fs-md;
+      line-height: $lh-md;
+    }
 	}
 }
 

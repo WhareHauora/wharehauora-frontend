@@ -131,7 +131,7 @@
               <td>35.0</td>
               <td class="actions">
                 <a class="table-action edit open-modal" href="#" data-mfp-src="#edit-room-type"><img class="svg" src="/img/icon/edit.svg" alt="edit" /></a>
-                <a class="table-action del" href="#"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
+                <a class="table-action del open-modal" href="#" data-mfp-src="#delete-room-type"><img class="svg" src="/img/icon/del.svg" alt="remove" /></a>
               </td>
             </tr>
             <tr class="spacer"><td colspan="100"></td></tr>
@@ -163,10 +163,21 @@
     </ul>
     <footer>
       <a class="btn submit" href="#">Save room type</a>
-      <a class="del" href="#"><img class="svg" src="/img/icon/del.svg" alt="icon" />Remove room type</a>
+      <a class="del open-modal" href="#" data-mfp-src="#delete-room-type"><img class="svg" src="/img/icon/del.svg" alt="icon" />Remove room type</a>
     </footer>
   </div>
   <!-- end modal -->
+  <div id="delete-room-type" class="modal alert mfp-hide">
+    <header>
+      <h2>Confirm Delete</h2>
+      <a class="head-action close" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+    </header>
+    <p>Are you sure want to remove the room type <strong>Living Space</strong>?<br />This cannot be undone.</p>
+    <footer>
+      <a class="btn alert" href="#">Delete</a>
+      <a class="cancel close" href="#">Don't delete</a>
+    </footer>
+  </div>
   
 	<!-- js -->
 	<script src="/js/jquery-2.1.3.min.js"></script>

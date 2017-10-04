@@ -196,6 +196,14 @@
     padding: 24px 0 24px;
     height: calc(100vh - 176px);
     overflow-y: scroll;
+    
+    // IE scroll padding fix
+    .ie & {
+    
+      .nav-links:last-child {
+        margin-bottom: 24px;
+      }
+    }
   
     h6 {
       margin: 30px 0 8px;
@@ -350,6 +358,7 @@
       // whare switcher
     
       .selectboxit-container {
+        width: calc(100% - 20px);
         margin-top: 0;
         top: 8px;
       }
@@ -363,6 +372,7 @@
     
     .nav {
       height: calc(100vh - 112px);
+      padding-bottom: 96px;
     }
     
     &.multi-whare {
@@ -373,6 +383,7 @@
       
       .nav {
         height: calc(100vh - 112px);
+        padding-bottom: 48px;
       }
     }
   }
@@ -430,6 +441,7 @@
     
     .nav {
       height: calc(100vh - 88px);
+      padding-bottom: 96px !important;
     }
     
     &.multi-whare {
@@ -442,5 +454,71 @@
         height: calc(100vh - 88px);
       }
     }
+  }
+}
+
+/* /////////////////////////////////
+	Pre-login header
+///////////////////////////////// */
+
+body.pre-log .header {
+  position: static;
+  height: auto;
+  padding: $vert-lg 0 $vert-md 0;
+  background: transparent;
+  border-bottom: 0;
+  display: block !important;
+  text-align: center;
+
+  .logo {
+    margin: 0 auto ($vert-lg / 2);
+  }
+  
+  .btn {
+    margin: 32px auto;
+  }
+  
+  @include for-mob-only {
+    padding: 13px 0 $vert-sm 0;
+  
+    .logo {
+      width: 174px;
+      height: 17px;
+      margin: 0 auto ($vert-sm + 2px);
+      background: transparent url('/img/logo-sm.svg') no-repeat left top;
+    }
+    
+    .btn {
+      margin: 24px auto;
+    }
+  }
+}
+
+body.pre-log footer.lang {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  width: 320px;
+  height: 44px;
+  margin-left: -184px;
+  
+  h6 {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 50%;
+    height: 44px;
+    line-height: 46px;
+    text-align: right;
+    overflow: hidden;
+  }
+  
+  .selectboxit-container {
+    float: right;
+    width: 50%;
+  }
+  
+  @include for-mob-only {
+    bottom: 2px;
   }
 }

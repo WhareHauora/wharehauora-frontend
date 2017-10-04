@@ -108,3 +108,146 @@ body {
   max-width: 1280px;
   margin: 0 auto;
 }
+
+// pre-login page layout
+
+body.pre-log {
+
+  .content {
+    position: relative;
+    z-index: $z-base;
+    box-sizing: border-box;
+    padding: 0 $pad-lg;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    min-height: 100vh;
+    overflow: hidden;
+    
+    @include for-narrow-down {
+      padding: 0 $pad-md;
+    }
+    
+    @include for-mob-only {
+      padding: 0 $pad-sm;
+    }
+  }
+  
+  .center {
+    position: relative;
+    z-index: $z-base + 2;
+    box-sizing: border-box;
+    max-width: 1040px;
+    min-height: 100vh;
+    padding-bottom: 54px;
+    overflow: hidden;
+    
+    .header {
+      position: relative;
+      z-index: $z-base + 2;
+    }
+    
+    @include for-mob-only {
+      padding-bottom: 34px;
+    }
+  }
+  
+  .img-full {
+    position: absolute;
+    z-index: $z-base + 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60vh;
+    background-color: $bg;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    // gradient
+    
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: $z-base + 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30vh;
+      background: linear-gradient(to bottom, rgba($bg,1) 0%, rgba($bg,0) 100%);
+    }
+  }
+}
+
+// empty page
+
+body.empty {
+
+  .content {
+    position: relative;
+    z-index: $z-base;
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .center {
+    position: relative;
+    z-index: $z-base + 2;
+  }
+  
+  .empty-text {
+  
+    p {
+      margin: 12px 0 0 0;
+      max-width: 640px;
+    }
+  
+    .btn {
+      margin: 24px 0 0 0;
+    }
+    
+    @include for-mob-only {
+      padding: 0 8px;
+      
+      .btn {
+        margin-top: 20px;
+      }
+    }
+  }
+  
+  .img-full {
+    position: absolute;
+    z-index: $z-base + 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60vh;
+    background-color: $bg;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    // gradient
+    
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: $z-base + 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30vh;
+      background: linear-gradient(to bottom, rgba($bg,1) 0%, rgba($bg,0) 100%);
+    }
+    
+    @include for-mob-only {
+      height: 50vh;
+      
+      &:after {
+        height: 25vh;
+      }
+    }
+  }
+}
