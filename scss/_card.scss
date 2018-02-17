@@ -196,6 +196,11 @@
       margin-right: 0;
     }
     
+    // IE grid break fix
+    .ie & {
+      width: calc((100% - 50px) / 3);
+    }
+    
     > footer {
       // override default footer
       max-height: none;
@@ -741,18 +746,7 @@
     margin-bottom: 0;
   }
   
-  @media (min-width: $bp-lg) and (max-width: $bp-lg-grid - 1px) {
-    
-    .img {
-      width: 36%;
-    }
-    
-    .text {
-      width: calc((100% + 60px) * .64);
-    }
-  }
-  
-  @media (min-width: $bp-sm) and (max-width: $bp-md-grid - 1px) { 
+  @include for-narrow-down { 
   
     .img {
       width: 36%;

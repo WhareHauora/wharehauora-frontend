@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<title>Dashboard - with sensor alert</title>
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="./favicon.ico">
 	<!-- meta -->
 	<meta charset="utf-8">
 	<meta name="description" content="">
@@ -17,39 +17,39 @@
 	<!-- mobile & iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-	<link rel="apple-touch-icon-precomposed" href="/app-icon.png"/>
+	<link rel="apple-touch-icon-precomposed" href="./app-icon.png"/>
 </head>
 <body>
   <header class="header">
-    <a class="logo-sm" href="/">Whare Hauora</a>
+    <a class="logo-sm" href="./">Whare Hauora</a>
     <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
   </header><!-- end header -->
   <div class="overlay"></div>
   <nav class="menu">
     <header>
-      <a class="logo" href="/">Whare Hauora</a>
+      <a class="logo" href="./">Whare Hauora</a>
       <h6>Menu</h6>
       <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
     </header>
     <div class="nav">
       <ul class="nav-links">
-        <li><a class="current" href="/dashboard.html">Dashboard</a></li>
+        <li><a class="current" href="./dashboard.html">Dashboard</a></li>
       </ul>
       <h6>Rooms</h6>
       <ul class="nav-links">
-        <li><a href="/room-detail1.html">Living Room</a></li>
-        <li><a href="/room-detail2.html">Master Bedroom</a></li>
-        <li><a href="/room-detail3.html">Kid's Room</a></li>
+        <li><a href="./room-detail1.html">Living Room</a></li>
+        <li><a href="./room-detail2.html">Master Bedroom</a></li>
+        <li><a href="./room-detail3.html">Kid's Room</a></li>
       </ul>
       <h6>Setup</h6>
       <ul class="nav-links">
-        <li><a href="/rooms.html">Whare & Rooms</a></li>
-        <li><a href="/whanau.html">Whānau</a></li>
+        <li><a href="./rooms.html">Whare & Rooms</a></li>
+        <li><a href="./whanau.html">Whānau</a></li>
       </ul>
       <h6>Account</h6>
       <ul class="nav-links">
-        <li><a href="/account.html">My Account</a></li>
-        <li><a href="/help.html">Whānau</a></li>
+        <li><a href="./account.html">My Account</a></li>
+        <li><a href="./help.html">Help</a></li>
         <li><a href="#">Logout</a></li>
       </ul>
     </div>
@@ -70,7 +70,7 @@
           <a class="head-action" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
         </header>
         <ul class="sensor-alerts">
-          <li><span class="sensor">253</span><span class="time">First detected about 1 month ago</span><a class="btn small" href="#">Assign to room</a></li>
+          <li><span class="sensor">253</span><span class="time">First detected about 1 month ago</span><a class="btn small open-modal" href="#" data-mfp-src="#assign-sensor">Assign to room</a></li>
           <li><span class="sensor">45</span><span class="time">First detected 15 days ago</span><a class="btn small" href="#">Assign to room</a></li>
         </ul>
         <footer>
@@ -158,6 +158,46 @@
       </div>    
     </div><!-- end center -->
   </div><!-- end content -->
+  
+  <!-- begin assign sensor modal -->
+  <div id="assign-sensor" class="modal mfp-hide">
+    <header>
+      <h2>Assign Sensor<span class="sensor">253</span></h2>
+      <a class="head-action close" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+    </header>
+    <ul class="form-row">
+      <li>
+        <label>Assign to existing room</label>
+        <ul class="form-controls">
+          <li><label><input type="radio" name="room" value="Living Room" />Living Room</label></li>
+          <li><label><input type="radio" name="room" value="Master Bedroom" />Master Bedroom</label></li>
+          <li><label><input type="radio" name="room" value="Kid’s Room" />Kid’s Room</label></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="inset">
+      <h3>Or, create a new room</h3>
+      <ul class="form-row">
+        <li>
+          <label>Room Name</label>
+          <input type="text" />
+        </li>
+        <li>
+          <label>Room use</label>
+          <ul class="form-controls">
+            <li><label><input type="radio" name="room_use" value="Living Space" />Living Space</label></li>
+            <li><label><input type="radio" name="room_use" value="Bedroom / Sleeping" />Bedroom / Sleeping</label></li>
+            <li><label><input type="radio" name="room_use" value="Kid’s Bedroom" />Kid’s Bedroom</label></li>
+            <li><label><input type="radio" name="room_use" value="Baby’s Bedroom" />Baby’s Bedroom</label></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <footer>
+      <a class="btn submit" href="#">Assign Sensor</a>
+    </footer>
+  </div>
+  <!-- end modal -->
   
 	<!-- js -->
 	<script src="./js/jquery-2.1.3.min.js"></script>

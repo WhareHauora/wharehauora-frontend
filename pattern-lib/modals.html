@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<title>Pattern Library - Modals</title>
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="./favicon.ico">
 	<!-- meta -->
 	<meta charset="utf-8">
 	<meta name="description" content="">
@@ -17,31 +17,31 @@
 	<!-- mobile & iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-	<link rel="apple-touch-icon-precomposed" href="/app-icon.png"/>
+	<link rel="apple-touch-icon-precomposed" href="./app-icon.png"/>
 </head>
 <body>
   <header class="header">
-    <a class="logo-sm" href="/">Whare Hauora</a>
+    <a class="logo-sm" href="./">Whare Hauora</a>
     <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
   </header><!-- end header -->
   <div class="overlay"></div>
   <nav class="menu">
     <header>
-      <a class="logo" href="/">Whare Hauora</a>
+      <a class="logo" href="./">Whare Hauora</a>
       <h6>Menu</h6>
       <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
     </header>
     <div class="nav">
       <h6>Pattern Library</h6>
       <ul class="nav-links">
-        <li><a href="/pattern-lib/text.html">Text</a></li>
-        <li><a href="/pattern-lib/links.html">Links & Buttons</a></li>
-        <li><a href="/pattern-lib/forms.html">Forms</a></li>
-        <li><a href="/pattern-lib/readings.html">Readings</a></li>
-        <li><a href="/pattern-lib/lists.html">Lists & Tables</a></li>
-        <li><a href="/pattern-lib/cards.html">Cards</a></li>
-        <li><a class="current" href="/pattern-lib/modals.html">Modals</a></li>
-        <li><a href="/pattern-lib/tooltips.html">Tooltips</a></li>
+        <li><a href="./pattern-lib/text.html">Text</a></li>
+        <li><a href="./pattern-lib/links.html">Links & Buttons</a></li>
+        <li><a href="./pattern-lib/forms.html">Forms</a></li>
+        <li><a href="./pattern-lib/readings.html">Readings</a></li>
+        <li><a href="./pattern-lib/lists.html">Lists & Tables</a></li>
+        <li><a href="./pattern-lib/cards.html">Cards</a></li>
+        <li><a class="current" href="./pattern-lib/modals.html">Modals</a></li>
+        <li><a href="./pattern-lib/tooltips.html">Tooltips</a></li>
       </ul>
     </div>
     <footer>
@@ -61,7 +61,8 @@
         </header>
         <p>Click below to launch sample modals.</p>
         <a class="btn open-modal" href="#" data-mfp-src="#popup1">Launch text modal</a>
-        <a class="btn open-modal" href="#" data-mfp-src="#popup2">Launch form Modal</a>
+        <a class="btn open-modal" href="#" data-mfp-src="#popup2">Launch form modal</a>
+        <a class="btn open-modal" href="#" data-mfp-src="#popup3">Launch delete confirm modal</a>
       </section>
       <div class="note">
         <p>Apply class <code>open-modal</code> to the link or button and then put the ID of the modal content in the link's <code>data-mfp-src</code> attribute. Modal content must have <code>modal</code> class, matching <code>id</code>, and class <code>mfp-hide</code> to hide modal until triggered. Any link or button inside the modal with class <code>close</code> will trigger modal close on click.</p>
@@ -133,6 +134,17 @@
     <footer>
       <a class="btn close" href="#">Action</a>
       <a class="del" href="#"><img class="svg" src="/img/icon/del.svg" alt="icon" />Remove</a>
+    </footer>
+  </div>
+  <div id="popup3" class="modal alert mfp-hide">
+    <header>
+      <h2>Confirm Delete</h2>
+      <a class="head-action close" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+    </header>
+    <p>Are you sure want to delete _____________?</p>
+    <footer>
+      <a class="btn alert" href="#">Delete</a>
+      <a class="cancel close" href="#">Don't delete</a>
     </footer>
   </div>
   <!-- end demo modals -->

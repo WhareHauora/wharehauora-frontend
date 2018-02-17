@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>admin & multi-whare navigation</title>
+	<title>Dashboard - empty</title>
 	<link rel="shortcut icon" href="./favicon.ico">
 	<!-- meta -->
 	<meta charset="utf-8">
@@ -12,32 +12,28 @@
 	<!-- css -->
 	<link rel="stylesheet" href="./css/style.css">
 	<!-- js -->
-	<script src="./js/modernizr-2.8.3.js"></script>
-	<script src="./js/detectizr-2.1.0.min.js"></script>
+	<script src="/js/modernizr-2.8.3.js"></script>
+	<script src="/js/detectizr-2.1.0.min.js"></script>
 	<!-- mobile & iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<link rel="apple-touch-icon-precomposed" href="./app-icon.png"/>
 </head>
-<body>
+<body class="empty">
   <header class="header">
     <a class="logo-sm" href="./">Whare Hauora</a>
     <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
   </header><!-- end header -->
   <div class="overlay"></div>
-  <nav class="menu multi-whare">
+  <nav class="menu">
     <header>
       <a class="logo" href="./">Whare Hauora</a>
+      <h6>Menu</h6>
       <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
-      <select class="whare-picker">
-        <option value="Lisefski House" selected>Lisefski House</option>
-        <option value="Everybody loves Digby">Everybody loves Digby</option>
-        <option value="Rabid Technologies">Rabid Technologies</option>
-      </select>
     </header>
     <div class="nav">
       <ul class="nav-links">
-        <li><a href="./dashboard.html">Dashboard</a></li>
+        <li><a class="current" href="./dashboard.html">Dashboard</a></li>
       </ul>
       <h6>Rooms</h6>
       <ul class="nav-links">
@@ -56,15 +52,6 @@
         <li><a href="./help.html">Help</a></li>
         <li><a href="#">Logout</a></li>
       </ul>
-      <h6>Admin</h6>
-      <ul class="nav-links">
-        <li><a href="./admin-whare.html">Whare</a></li>
-        <li><a href="./admin-whare-types.html">Whare Types</a></li>
-        <li><a href="./admin-room-types.html">Room Types</a></li>
-        <li><a href="./admin-users.html">Users</a></li>
-        <li><a href="./admin-mqtt.html">MQTT</a></li>
-        <li><a href="./admin-messages.html">Messages</a></li>
-      </ul>
     </div>
     <footer>
       <select class="lang-picker">
@@ -76,24 +63,23 @@
   </nav><!-- end menu -->
   <div class="content">
     <div class="center">
-      <div class="note">
-        <h3>For multi-whare accounts</h3>
-        <p>Add class <code>multi-whare</code> to <code>nav.menu</code> to adjust height of <code>div.nav</code> to allow for the whare picker.</p>
-        <p>Add whare picker as <code>select.whare-picker</code> as last item in <code>nav.menu > header</code>.</p>
-      </div>
-      <div class="note">
-        <h3>For admin accounts</h3>
-        <p>Add admin links as a new <code>h6</code> and <code>ul.nav-links</code> at bottom of <code>div.nav</code>.</p>
+      <h1>Lisefski House</h1>
+      <div class="empty-text">
+        <h2>You haven’t setup any rooms yet.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="btn" href="./rooms.html">Setup Whare & Rooms</a>
       </div>
     </div><!-- end center -->
+    <div class="img-full" style="background-image: url('/img/placeholder-illy3.jpg')"></div>
   </div><!-- end content -->
   
 	<!-- js -->
-	<script src="./js/jquery-2.1.3.min.js"></script>
-	<script src="./js/jquery-ui-widget.min.js"></script>
-	<script src="./js/jquery.selectBoxIt.min.js"></script>
-	<script src="./js/jquery.icheck.min.js"></script>
-	<script src="./js/jquery.magnific-popup.min.js"></script>
-	<script src="./js/init.js"></script>
+	<script src="/js/jquery-2.1.3.min.js"></script>
+	<script src="/js/jquery-ui-widget.min.js"></script>
+	<script src="/js/jquery.selectBoxIt.min.js"></script>
+	<script src="/js/jquery.icheck.min.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/tooltipster.bundle.min.js"></script>
+	<script src="/js/init.js"></script>
 </body>
 </html>

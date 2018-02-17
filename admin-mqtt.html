@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Admin - MQTT</title>
+	<link rel="shortcut icon" href="./favicon.ico">
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+  <meta http-equiv="cleartype" content="on">
+  <!-- webfont -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" href="./css/style.css">
+	<!-- js -->
+	<script src="/js/modernizr-2.8.3.js"></script>
+	<script src="/js/detectizr-2.1.0.min.js"></script>
+	<!-- mobile & iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<link rel="apple-touch-icon-precomposed" href="./app-icon.png"/>
+</head>
+<body>
+  <header class="header">
+    <a class="logo-sm" href="./">Whare Hauora</a>
+    <a class="open-menu" href="#"><span class="label">Menu</span><img class="svg" src="/img/icon/menu.svg" alt="menu" /></a>
+  </header><!-- end header -->
+  <div class="overlay"></div>
+  <nav class="menu">
+    <header>
+      <a class="logo" href="./">Whare Hauora</a>
+      <h6>Menu</h6>
+      <a class="x" href="#"><img class="svg" src="/img/icon/x.svg" alt="close" /></a>
+    </header>
+    <div class="nav">
+      <ul class="nav-links">
+        <li><a href="./dashboard.html">Dashboard</a></li>
+      </ul>
+      <h6>Rooms</h6>
+      <ul class="nav-links">
+        <li><a href="./room-detail1.html">Living Room</a></li>
+        <li><a href="./room-detail2.html">Master Bedroom</a></li>
+        <li><a href="./room-detail3.html">Kid's Room</a></li>
+      </ul>
+      <h6>Setup</h6>
+      <ul class="nav-links">
+        <li><a href="./rooms.html">Whare & Rooms</a></li>
+        <li><a href="./whanau.html">Whānau</a></li>
+      </ul>
+      <h6>Account</h6>
+      <ul class="nav-links">
+        <li><a href="./account.html">My Account</a></li>
+        <li><a href="./help.html">Help</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+      <h6>Admin</h6>
+      <ul class="nav-links">
+        <li><a href="./admin-whare.html">Whare</a></li>
+        <li><a href="./admin-whare-types.html">Whare Types</a></li>
+        <li><a href="./admin-room-types.html">Room Types</a></li>
+        <li><a href="./admin-users.html">Users</a></li>
+        <li><a class="current" href="./admin-mqtt.html">MQTT</a></li>
+        <li><a href="./admin-messages.html">Messages</a></li>
+      </ul>
+    </div>
+    <footer>
+      <select class="lang-picker">
+        <option value="English" data-iconurl="/img/icon/lang-eng.svg" selected>English</option>
+        <option value="Te Reo Māori" data-iconurl="/img/icon/lang-mri.svg">Te Reo Māori</option>
+        <option value="Samoan" data-iconurl="/img/icon/lang-smo.svg">Samoan</option>
+      </select>
+    </footer>
+  </nav><!-- end menu -->
+  <div class="content">
+    <div class="center">
+      <section class="card">
+        <header>
+          <h2>Admin: MQTT Provisioning</h2>
+        </header>
+        <p>Sensors send readings to us over MQTT. This is an overview of provisioned accounts and credentials on our Mqtt Server. Each account has write-only access.</p>
+        <a class="btn-add append-middle" href="#"><img class="svg" src="/img/icon/btn-sync.svg" alt="remove" />Sync with MQTT server</a>
+        <table>
+          <thead>
+            <tr>
+              <th>Whare</th>
+              <th>MQTT Username</th>
+              <th>MQTT Password</th>
+              <th>Provisioned</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#">10 Silverstream Road</a>
+                <span class="sub">laurief@me.com</span>
+              </td>
+              <td>whare7</td>
+              <td>JUD-QEC-DCQ</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">Brenda's Castle</a>
+                <span class="sub">brenda@wallace.net.nz</span>
+              </td>
+              <td>whare23</td>
+              <td>BBD-HGQ-OOF</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">Everyone loves Digby</a>
+                <span class="sub">amber@wharehauora.nz</span>
+              </td>
+              <td>whare3</td>
+              <td>AQA-WFX-PYA</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">10 Silverstream Road</a>
+                <span class="sub">laurief@me.com</span>
+              </td>
+              <td>whare7</td>
+              <td>JUD-QEC-DCQ</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">Brenda's Castle</a>
+                <span class="sub">brenda@wallace.net.nz</span>
+              </td>
+              <td>whare23</td>
+              <td>BBD-HGQ-OOF</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">Everyone loves Digby</a>
+                <span class="sub">amber@wharehauora.nz</span>
+              </td>
+              <td>whare3</td>
+              <td>AQA-WFX-PYA</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">10 Silverstream Road</a>
+                <span class="sub">laurief@me.com</span>
+              </td>
+              <td>whare7</td>
+              <td>JUD-QEC-DCQ</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">Brenda's Castle</a>
+                <span class="sub">brenda@wallace.net.nz</span>
+              </td>
+              <td>whare23</td>
+              <td>BBD-HGQ-OOF</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">Everyone loves Digby</a>
+                <span class="sub">amber@wharehauora.nz</span>
+              </td>
+              <td>whare3</td>
+              <td>AQA-WFX-PYA</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <td><a href="#">10 Silverstream Road</a>
+                <span class="sub">laurief@me.com</span>
+              </td>
+              <td>whare7</td>
+              <td>JUD-QEC-DCQ</td>
+              <td>2017-09-08 05:08:33 UTC</td>
+              <td class="actions">
+                <a class="btn" href="#">Provision</a>
+              </td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <a class="btn" href="#">First</a>
+          <a class="btn icon-only" href="#"><img class="svg" src="/img/icon/back.svg" alt="prev" /></a>
+          <div class="pages">
+            <a class="current" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+          </div>
+          <a class="btn icon-only" href="#"><img class="svg" src="/img/icon/forward.svg" alt="next" /></a>
+          <a class="btn" href="#">Last</a>
+        </div>
+      </section>
+    </div><!-- end center -->
+  </div><!-- end content -->
+  
+ 	<!-- js -->
+	<script src="/js/jquery-2.1.3.min.js"></script>
+	<script src="/js/jquery-ui-widget.min.js"></script>
+	<script src="/js/jquery.selectBoxIt.min.js"></script>
+	<script src="/js/jquery.icheck.min.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/tooltipster.bundle.min.js"></script>
+	<script src="/js/init.js"></script>
+</body>
+</html>

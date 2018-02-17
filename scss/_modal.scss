@@ -48,7 +48,8 @@
       margin-right: 16px;
     }
     
-    .del {
+    .del,
+    .cancel {
       float: right;
       margin-top: 13px;
     }
@@ -93,10 +94,32 @@
         }
       }
       
-      .del {
+      .del,
+      .cancel {
         float: none;
         margin-top: 24px;
       }
+    }
+  }
+}
+
+/* /////////////////////////////////
+	Alert Modal
+///////////////////////////////// */
+
+.modal.alert {
+
+  > header {
+    padding-left: 12px + 42px;
+    background: transparent url('/img/icon/alert.svg') no-repeat 12px 24px;
+    
+    h2 {
+      color: $c-alert;
+    }
+    
+    @include for-mob-only {
+      padding-left: 12px + 38px;
+      background-position: 12px 20px
     }
   }
 }
