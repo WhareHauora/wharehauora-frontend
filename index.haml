@@ -1,0 +1,85 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Whare Hauora front-end index
+    %link{href: "/favicon.ico", rel: "shortcut icon"}/
+    / meta
+    %meta{charset: "utf-8"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "on", "http-equiv" => "cleartype"}/
+    / webfont
+    %link{href: "https://fonts.googleapis.com/css?family=Merriweather:700|Roboto:300,400,700&subset=latin-ext", rel: "stylesheet"}/
+    / css
+    %link{href: "/css/style.css", rel: "stylesheet"}/
+    / js
+    %script{src: "/js/modernizr-2.8.3.js"}
+    %script{src: "/js/detectizr-2.1.0.min.js"}
+    / mobile & iOS
+    %meta{content: "yes", name: "apple-mobile-web-app-capable"}/
+    %meta{content: "width=device-width, initial-scale=1.0, user-scalable=no", name: "viewport"}/
+    %link{href: "/app-icon.png", rel: "apple-touch-icon-precomposed"}/
+  %body
+    %header.header
+      %a.logo-sm{href: "/"} Whare Hauora
+    / end header
+    .overlay
+    %nav.menu
+      %header
+        %a.logo{href: "/"} Whare Hauora
+    / end menu
+    .content
+      .center
+        %h1 Kia ora!
+        %section.card
+          %header
+            %h2 Templates
+            %h4 As of 29-09-2017
+          %ul
+            %li
+              %a{href: "/nav-admin.html"} Admin &amp; Multi-whare navigation example
+            %li
+              %a{href: "/dashboard.html"} Dashboard
+            %li
+              %a{href: "/dashboard-alert.html"} Dashboard - with sensor alert
+            %li
+              %a{href: "/room-detail1.html"} Room detail - high grade
+            %li
+              %a{href: "/room-detail2.html"} Room detail - mid grade
+            %li
+              %a{href: "/room-detail3.html"} Room detail - low grade + health warning
+            %li
+              %a{href: "/room-detail4.html"} Room detail - expired / connectivity issue
+            %li
+              %a{href: "/room-detail5.html"} Room detail - loading
+        %section.card
+          %header
+            %h2 Pattern Library
+            %h4 As of 29-09-2017
+          %ul
+            %li
+              %a{href: "/pattern-lib/text.html"} Text
+            %li
+              %a{href: "/pattern-lib/links.html"} Links &amp; Buttons
+            %li
+              %a{href: "/pattern-lib/forms.html"} Forms
+            %li
+              %a{href: "/pattern-lib/readings.html"} Readings
+            %li
+              %a{href: "/pattern-lib/lists.html"} Lists &amp; Tables
+            %li
+              %a{href: "/pattern-lib/cards.html"} Cards
+            %li
+              %a{href: "/pattern-lib/modals.html"} Modals
+            %li
+              %a{href: "/pattern-lib/tooltips.html"} Tooltips
+      / end center
+    / end content
+    / js
+    %script{src: "/js/jquery-2.1.3.min.js"}
+    %script{src: "/js/jquery-ui-widget.min.js"}
+    %script{src: "/js/jquery.selectBoxIt.min.js"}
+    %script{src: "/js/jquery.icheck.min.js"}
+    %script{src: "/js/jquery.magnific-popup.min.js"}
+    %script{src: "/js/tooltipster.bundle.min.js"}
+    %script{src: "/js/init.js"}
